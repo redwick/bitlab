@@ -1,0 +1,7 @@
+.navi{
+  height: 5vh;
+  background-color: lightpink;
+}
+.navi-active{
+  background-color: red;
+}
