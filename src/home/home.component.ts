@@ -120,7 +120,6 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.init = true;
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
       let e = event as NavigationStart;
       this.init = e.url.includes('home');
