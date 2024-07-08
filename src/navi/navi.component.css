@@ -1,7 +1,15 @@
 .navi{
-  height: 5vh;
-  background-color: lightpink;
+  height: 7vh;
+  background-color: var(--main-color);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
 }
 .navi-active{
-  background-color: red;
+  background-color: var(--main-active-color);
+}
+.nav-menu{
+  width: 8vw;
+  cursor: pointer;
 }

@@ -1,7 +1,30 @@
 .section{
   height: 100vh;
+  z-index: 15;
 }
 .navi{
   position: sticky;
   top: 0;
+  z-index: 100;
+}
+.dots{
+  position: fixed;
+  top: 50%;
+  right: 1vw;
+  transform: translateY(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  width: 25px;
+}
+.dot{
+  height: 25px;
+  width: 25px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px 0 5px 0;
+  cursor: pointer;
+  &.dot-selected{
+    background-color: var(--main-active-color);
+  }
 }

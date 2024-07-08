@@ -1,10 +1,23 @@
 head,body{
   padding: 0;
   margin: 0;
+  overflow: hidden;
+}
+:root{
+  --main-color: #333333;
+  --main-active-color: #fd0843;
 }
 .df{
   display: flex;
 }
 .mx-20{
   margin: 0 10px 0 10px;
+}
+.cxy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.h100{
+  height: 100%;
 }

@@ -1,2 +1,18 @@
 <div class="section">
+  <div class="text-header">МЫ ПРЕДЛАГАЕМ</div>
+  <div class="offers-header">
+    <div class="offers">
+      <div class="offer" *ngFor="let offer of offers; let i = index">
+        <div class="offer-header-and-image" [@right]="init ? 'init' : 'closed'">
+          <div class="offer-image">
+            <img class="offer-image-img" [src]="'/' + offer.image">
+          </div>
+          <div class="offer-header">{{offer.title}}</div>
+        </div>
+        <ul class="offer-descr" [@left]="init ? 'init' : 'closed'">
+          <li class="offer-descr-line" *ngFor="let s of offer.descr">{{s}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

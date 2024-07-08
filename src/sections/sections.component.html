@@ -7,4 +7,7 @@
       <ng-template [ngComponentOutlet]="c"></ng-template>
     </div>
   </div>
+  <div *ngIf="dotsEnabled" class="dots">
+    <div *ngFor="let c of components; let i = index" class="dot" [class.dot-selected]="i == this.scrolledSection" (click)="clickScroll(i)"></div>
+  </div>
 </div>

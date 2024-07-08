@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, Type, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, Type, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, NavigationStart, Router, Routes} from "@angular/router";
 import {NgComponentOutlet, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {NaviComponent} from "../navi/navi.component";
@@ -31,9 +31,16 @@ export class SectionsComponent implements OnInit, AfterViewInit{
     height: 'calc(100vh)'
   };
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.router.navigate(['/home']);
+  }
+
   @Input({required: true}) components: Type<any>[] = [];
   @Input() naviComponent: Type<any> | null = null;
   @Input() routes: string[] = [];
+  @Input() dotsEnabled: Boolean = true;
+
 
   @ViewChild('navi') navi: ElementRef | null = null;
 
@@ -67,11 +74,14 @@ export class SectionsComponent implements OnInit, AfterViewInit{
     }
   }
   scrollToComponent(){
-    this.scrollDelay = true;
-    window.scrollTo({top: (window.innerHeight - this.naviHeight) * this.scrolledSection, behavior: 'smooth'});
-    setTimeout(() => {
-      this.scrollDelay = false;
-    }, this.scrollDelayAmount);
+    if (typeof window !== "undefined") {
+      this.scrollDelay = true;
+      window.scrollTo({top: (window.innerHeight - this.naviHeight) * this.scrolledSection, behavior: 'smooth'});
+      setTimeout(() => {
+        this.scrollDelay = false;
+      }, this.scrollDelayAmount);
+    }
+
   }
   scrollEvent(event: WheelEvent) {
     event.preventDefault();
@@ -84,15 +94,27 @@ export class SectionsComponent implements OnInit, AfterViewInit{
       if (this.scrolledSection >= this.amountOfSections){
         this.scrolledSection = this.amountOfSections - 1;
       }
-      if (this.routes.length > 0){
-        this.router.navigate([this.routes[this.scrolledSection]]);
-      }
-      else{
-        this.scrollToComponent();
-      }
+      this.updateScroll();
+    }
+  }
+  updateScroll(){
+    if (this.routes.length > 0){
+      this.router.navigate([this.routes[this.scrolledSection]]);
+    }
+    else{
+      this.scrollToComponent();
     }
   }
   isBottom(event: WheelEvent){
     return event.deltaY > 0;
+  }
+
+  clickScroll(i: number) {
+    this.scrolledSection = i;
+    this.updateScroll();
+  }
+
+  resizeEvent(event: UIEvent) {
+    console.error(event);
   }
 }

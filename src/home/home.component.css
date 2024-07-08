@@ -1,4 +1,30 @@
 .section{
   height: 100%;
-  background-color: aqua;
+  background-image: url("/background-header.png");
+  background-size: cover;
+  color: var(--main-color);
+}
+.logo-image{
+  width: 25vw;
+}
+.text-first-row{
+  font-size: 19vh;
+  position: absolute;
+  right: calc(5% + 200px);
+  top: 20vh;
+}
+.text-highlight{
+  color: var(--main-active-color);
+}
+.text-second-row{
+  font-size: 15vh;
+  position: absolute;
+  left: calc(3% + 200px);
+  top: 45vh;
+}
+.text-third-row{
+  font-size: 19vh;
+  position: absolute;
+  right: calc(5% + 200px);
+  top: 65vh;
 }
