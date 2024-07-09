@@ -1,3 +1,35 @@
 .section{
-  background-color: darkorange;
+  height: 100%;
+  color: var(--main-color);
+  position: relative;
+  padding-right: 3%;
+}
+.text-header{
+  color: var(--main-active-color);
+  font-size: 5vh;
+  padding-left: 4%;
+  padding-top: 2%;
+}
+.two-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.text-descr{
+  padding: 3% 3% 3% 4%;
+  font-size: 2vh;
+}
+.column-height{
+  height: 50vh;
+}
+.use-image{
+  display: flex;
+  justify-content: center;
+}
+.cloud-img{
+  height: 45vh;
+  padding-left: 15%;
+}
+.server-img{
+  height: 45vh;
+  padding-left: 25%;
 }

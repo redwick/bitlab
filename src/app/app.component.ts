@@ -17,6 +17,6 @@ import {SkillsComponent} from "../skills/skills.component";
 })
 export class AppComponent {
   components = [HomeComponent, OffersComponent, SkillsComponent, DeployComponent, AboutComponent];
-  routes = ['home', 'offers', 'deploy', 'skills', 'about'];
+  routes = ['home', 'offers', 'skills', 'deploy', 'about'];
   protected readonly NaviComponent = NaviComponent;
 }

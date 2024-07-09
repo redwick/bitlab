@@ -13,9 +13,6 @@
   right: calc(5% + 200px);
   top: 20vh;
 }
-.text-highlight{
-  color: var(--main-active-color);
-}
 .text-second-row{
   font-size: 15vh;
   position: absolute;

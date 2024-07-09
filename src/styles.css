@@ -13,6 +13,14 @@ head,body{
 .mx-20{
   margin: 0 10px 0 10px;
 }
+.cx{
+  display: flex;
+  justify-content: center;
+}
+.cy{
+  display: flex;
+  align-items: center;
+}
 .cxy{
   display: flex;
   justify-content: center;
@@ -20,4 +28,10 @@ head,body{
 }
 .h100{
   height: 100%;
+}
+.text-highlight{
+  color: var(--main-active-color);
+}
+.ml-1{
+  margin-left: 1%;
 }

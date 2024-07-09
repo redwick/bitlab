@@ -1,2 +1,36 @@
 <div class="section">
+  <div class="two-columns">
+    <div class="first-column">
+      <div class="text-header">ОБЛАЧНОЕ РЕШЕНИЕ</div>
+      <div class="column-height cy" [@left]="init ? 'init' : 'closed'">
+        <img class="cloud-img" src="/cloud.png">
+      </div>
+      <div class="text-descr" [@bottom]="init ? 'init' : 'closed'">
+        <div class="text-highlight">Плюсы:</div>
+        <ul>
+          <li *ngFor="let c of cloud.plus">{{c}}</li>
+        </ul>
+        <div class="text-highlight">Минусы:</div>
+        <ul>
+          <li *ngFor="let c of cloud.minus">{{c}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="second-column">
+      <div class="text-header">СЕРВЕРНОЕ РЕШЕНИЕ</div>
+      <div class="column-height cy" [@right]="init ? 'init' : 'closed'">
+        <img class="server-img" src="/server.png">
+      </div>
+      <div class="text-descr" [@bottom]="init ? 'init' : 'closed'">
+        <div class="text-highlight">Плюсы:</div>
+        <ul>
+          <li *ngFor="let c of server.plus">{{c}}</li>
+        </ul>
+        <div class="text-highlight">Минусы:</div>
+        <ul>
+          <li *ngFor="let c of server.minus">{{c}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

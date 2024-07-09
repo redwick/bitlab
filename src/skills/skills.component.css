@@ -1,3 +1,46 @@
 .section{
-  background-color: darkmagenta;
+  height: 100%;
+  color: var(--main-color);
+  position: relative;
+  padding-right: 3%;
+}
+.text-header{
+  color: var(--main-active-color);
+  font-size: 5vh;
+  padding-left: 4%;
+  padding-top: 2%;
+}
+.two-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.text-descr{
+  font-size: 4vh;
+  padding: 2% 1% 2% 3%;
+}
+.column-height{
+  height: 60vh;
+}
+.text-image{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.use-image{
+  display: flex;
+  justify-content: center;
+}
+.use-img{
+  height: 60vh;
+  padding-left: 12%;
+}
+.have-img{
+  height: 60vh;
+}
+.use-ul{
+  columns: 2;
+  margin: 0;
+}
+.have-ul{
+  columns: 2;
+  margin: 0;
 }

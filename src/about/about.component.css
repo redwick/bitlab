@@ -1,4 +1,90 @@
 .section{
   height: 100%;
-  background-color: indianred;
+  color: var(--main-color);
+  position: relative;
+  padding-right: 3%;
+}
+.text-header{
+  color: var(--main-active-color);
+  font-size: 5vh;
+  padding-left: 4%;
+  padding-top: 2%;
+}
+.two-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.text-descr{
+  padding: 3% 3% 3% 4%;
+  font-size: 2.5vh;
+}
+.column-height{
+  height: 50vh;
+}
+.use-image{
+  display: flex;
+  justify-content: center;
+}
+.cloud-img{
+  height: 45vh;
+  padding-left: 15%;
+}
+.server-img{
+  height: 45vh;
+  padding-left: 25%;
+}
+.text-article {
+  padding-top: 2vh;
+  padding-bottom: 0.5vh;
+}
+.team-img{
+  height: 40vh;
+}
+.text-line{
+  padding-top: 1vh;
+}
+.contact-img{
+  height: 4vh;
+}
+.contact-lines{
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+.contact-line{
+  padding-left: 2%;
+  cursor: pointer;
+}
+.copy-img{
+  height: 4vh;
+  cursor: pointer;
+}
+.qr-img{
+  height: 3vh;
+  cursor: pointer;
+  padding-left: 1vh;
+}
+.tooltip{
+  background-color: rgba(51, 51, 51, 0.75);
+  color: white;
+  width: auto;
+  padding: 12px;
+  font-size: 2vh;
+  border-radius: 20px;
+}
+.qr-code{
+  background-color: rgba(51, 51, 51, 0.75);
+  padding: 12px;
+}
+ul{
+  margin: 0;
+}
+.contact{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 40vh;
+  width: 60vh;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 200;
 }

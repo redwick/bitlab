@@ -1,0 +1,73 @@
+.input-text {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .input-label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+.input-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: gray;
+}
+.input-text:focus {
+  ~ .input-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--main-active-color);
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--main-color), var(--main-active-color));
+  border-image-slice: 1;
+}
+.input-text {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+.input-line{
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+.contact-us{
+  border: 1px solid gray;
+  background-color:rgba(253, 8, 67, 0.02);
+  border-radius: 2vh;
+  width: 25vw;
+  padding: 0 4vh 3vh 4vh;
+}
+.send-button{
+  background-color: var(--main-color);
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 600;
+  width: 20vh;
+  height: 4vh;
+  cursor: pointer;
+}

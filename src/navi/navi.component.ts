@@ -16,10 +16,10 @@ import {NgForOf} from "@angular/common";
 })
 export class NaviComponent {
   navMenu: NavMenu[] = [
-    new NavMenu('home', 'HOME'),
-    new NavMenu('offers', 'OFFERS'),
-    new NavMenu('deploy', 'DEPLOY'),
-    new NavMenu('skills', 'SKILLS'),
-    new NavMenu('about', 'ABOUT'),
+    new NavMenu('home', 'ГЛАВНАЯ'),
+    new NavMenu('offers', 'ПРЕДЛОЖЕНИЯ'),
+    new NavMenu('skills', 'ТЕХНОЛОГИИ'),
+    new NavMenu('deploy', 'ПРИМЕНЕНИЕ'),
+    new NavMenu('about', 'КОНТАКТЫ'),
   ];
 }
