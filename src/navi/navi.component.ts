@@ -19,7 +19,7 @@ export class NaviComponent {
     new NavMenu('home', 'ГЛАВНАЯ'),
     new NavMenu('offers', 'ПРЕДЛОЖЕНИЯ'),
     new NavMenu('skills', 'ТЕХНОЛОГИИ'),
-    new NavMenu('deploy', 'ПРИМЕНЕНИЕ'),
+    new NavMenu('deploy', 'РЕАЛИЗАЦИЯ'),
     new NavMenu('about', 'КОНТАКТЫ'),
   ];
 }
