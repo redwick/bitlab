@@ -2,12 +2,14 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {FileUrl} from "./file-url";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [
     ReactiveFormsModule,
+    NgForOf,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
