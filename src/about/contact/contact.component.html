@@ -1,19 +1,46 @@
 <div class="contact-us">
-  <form>
+  <div class="close-button" (click)="close()"><img class="close-button-img" src="/close.png"></div>
+  <form [formGroup]="contacts" (ngSubmit)="commit()">
     <div class="input-line">
-      <input id="name" class="input-text" type="text" placeholder="Ваше имя" required>
+      <input id="name" class="input-text" type="text" placeholder="Ваше имя" formControlName="name" required>
       <label for="name" class="input-label">Ваше имя</label>
     </div>
     <div class="input-line">
-      <input id="email" class="input-text" type="email" placeholder="E-mail" required>
+      <input id="email" class="input-text" type="email" placeholder="E-mail" formControlName="email" required>
       <label for="email" class="input-label">E-mail</label>
     </div>
-    <div class="input-line">
-      <textarea id="text" class="input-text" required></textarea>
+    <div class="input-line text-descr df cx">
+      <div>
+        <input id="topic-offer" type="radio" name="topic" value="offer" formControlName="topic">
+        <label for="topic-offer">Сотрудничество</label>
+      </div>
+      <div class="ml-1">
+        <input id="topic-contribute" type="radio" name="topic" value="contribute" formControlName="topic">
+        <label for="topic-contribute">Трудоустройство</label>
+      </div>
+      <div class="ml-1">
+        <input id="topic-other" type="radio" name="topic" value="other" formControlName="topic">
+        <label for="topic-other">Другое</label>
+      </div>
+    </div>
+    <div class="input-line text">
+      <textarea id="text" class="input-text" formControlName="text" required></textarea>
       <label for="text" class="input-label">Введите сообщение</label>
     </div>
+    <div class="input-line text">
+      <input hidden #selectFiles type="file" (change)="handleFileInput(selectFiles.files)" multiple>
+      <div [class.file-drag]="dragOver" class="upload cx cy">
+        <div [class.drag]="dragOver" class="upload-files" (dragenter)="dragOver = true" (dragleave)="dragOver = false" (click)="selectFiles.click()" (drop)="$event.preventDefault(); onFilesDrop($event); dragOver = false" (dragover)="$event.stopPropagation(); $event.preventDefault()">
+          <span class="no-actions">Перетащите файлы или нажмите для загрузки</span>
+        </div>
+      </div>
+      <div class="df" *ngFor="let file of loaded">
+        <div class="cy">{{file}}</div>
+        <div class="cxy" (click)="removeFile(file)">x</div>
+      </div>
+    </div>
     <div class="input-line cx">
-      <button class="send-button">ОТПРАВИТЬ</button>
+      <button [class.disabled]="!contacts.valid" type="submit" class="send-button">ОТПРАВИТЬ</button>
     </div>
   </form>
 </div>

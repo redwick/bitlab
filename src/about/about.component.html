@@ -3,56 +3,82 @@
     <div class="first-column">
       <div class="text-header">О НАС</div>
       <div class="text-descr" [@left]="init ? 'init' : 'closed'">
-        <ul>
-          <li>Мы молодая развивающаяся компания в сфере <span class="text-highlight">IT</span>.</li>
-          <li>Мы старательно и качественно подходим к решению наших и ваших задач.</li>
-          <li>Мы постоянно совершенствуем наши знания и изучаем новые технологии.</li>
-        </ul>
-        <div class="text-article text-highlight">Наша цель</div>
-        <div class="text-line">Любому бизнесу необходима информатизация.</div>
-        <div class="text-line">Мы готовы изучить каждый случай по-отдельности, выслушав ваши и предложив наши идеи по информатизации и оптимизации качества вашего бизнеса.</div>
-        <div class="text-line">Для этого в нашей команде помимо разработчиков имеются <span class="text-highlight">бизнес-аналитики</span>.</div>
-        <div class="text-article text-highlight">Наши партнёры</div>
+        <div class="text-article">
+          <ul>
+            <li>Мы молодая развивающаяся компания в сфере <span class="text-highlight">IT</span>.</li>
+            <li>Мы старательно и качественно подходим к решению наших и ваших задач.</li>
+            <li>Мы постоянно совершенствуем наши знания и изучаем новые технологии.</li>
+          </ul>
+        </div>
+        <div class="text-article-header text-highlight">Наша цель</div>
+        <div class="text-article">
+          <div class="text-line">Любому бизнесу необходима информатизация.</div>
+          <div class="text-line">Мы готовы изучить каждый случай по-отдельности, выслушав ваши и предложив наши идеи по информатизации и оптимизации качества вашего бизнеса.</div>
+          <div class="text-line">Для этого в нашей команде помимо разработчиков имеются <span class="text-highlight">бизнес-аналитики</span>.</div>
+          <div class="text-article-header text-highlight">Наши партнёры</div>
+        </div>
       </div>
     </div>
     <div class="second-column">
       <div class="text-header">СВЯЗАТЬСЯ С НАМИ</div>
       <div class="text-descr" [@right]="init ? 'init' : 'closed'">
-        <div class="text-line">Вы можете связаться с нами одним из удобных для вас способов</div>
-        <div class="contact-lines text-line">
-          <div class="df">
-            <a class="cxy" #whatsappUrl [href]="'https://wa.me/' + whatsapp" target="_blank">
-              <img class="contact-img" src="/whatsapp.png">
-            </a>
-            <div (click)="whatsappUrl.click()" class="contact-line cy">WhatsApp</div>
-            <div class="cy ml-1" (mouseleave)="qrCode.text = ''">
-              <img (click)="showTextLocation(qrCode, $event.clientX, $event.clientY, 'https://wa.me/' + whatsapp, false)" class="qr-img" src="/qr.png">
+        <div class="text-article">
+          <div class="text-line">Вы можете связаться с нами одним из удобных для вас способов</div>
+          <div class="text-line">
+            <div class="df text-line">
+              <a class="cxy" #whatsappUrl [href]="'https://wa.me/' + whatsapp" target="_blank">
+                <img class="contact-img" src="/whatsapp.png">
+              </a>
+              <div (click)="whatsappUrl.click()" class="contact-line cy">WhatsApp</div>
+              <div class="cy ml-1">
+                <div class="button-image cxy">
+                  <img (click)="whatsappUrl.click()" class="button-img" src="/url.png">
+                </div>
+                <div class="button-image cxy" (mouseleave)="qrCode.text = ''">
+                  <img (click)="showTextLocation(qrCode, $event.clientX, $event.clientY, 'https://wa.me/' + whatsapp, false)" class="button-img" src="/qr.png">
+                </div>
+              </div>
+            </div>
+            <div class="df text-line">
+              <a class="cxy" #telegramUrl [href]="'https://t.me/' + telegram" target="_blank">
+                <img class="contact-img" src="/telegram.png">
+              </a>
+              <div (click)="telegramUrl.click()" class="contact-line cy">Telegram</div>
+              <div class="cy ml-1">
+                <div class="button-image cxy">
+                  <img (click)="telegramUrl.click()" class="button-img" src="/url.png">
+                </div>
+                <div class="button-image cxy" (mouseleave)="qrCode.text = ''">
+                  <img (click)="showTextLocation(qrCode, $event.clientX, $event.clientY, 'https://t.me/' + telegram, false)" class="qr-img" src="/qr.png">
+                </div>
+              </div>
+            </div>
+            <div class="df text-line">
+              <a class="cxy" #emailUrl [href]="'mailto:' + email" target="_blank">
+                <img class="contact-img" src="/email.png">
+              </a>
+              <div (click)="emailUrl.click()" class="contact-line cy">{{email}}</div>
+              <div class="cy ml-1">
+                <div class="button-image cxy">
+                  <img (click)="emailUrl.click()" class="button-img" src="/url.png">
+                </div>
+                <div class="button-image cxy">
+                  <img (click)="copyEmail($event)" class="button-img" src="/copy.png">
+                </div>
+              </div>
+            </div>
+            <div class="df text-line">
+              <div class="cxy">
+                <img class="contact-img" src="/contact.png">
+              </div>
+              <div (click)="showContact = true" class="contact-line cy">Форма обратной связи</div>
+              <div class="cy ml-1">
+                <div class="button-image cxy">
+                  <img (click)="showContact = true" class="button-img" src="/url.png">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="df">
-            <a class="cxy" #telegramUrl [href]="'https://t.me/' + telegram" target="_blank">
-              <img class="contact-img" src="/telegram.png">
-            </a>
-            <div (click)="telegramUrl.click()" class="contact-line cy">Telegram</div>
-            <div class="cy ml-1" (mouseleave)="qrCode.text = ''">
-              <img (click)="showTextLocation(qrCode, $event.clientX, $event.clientY, 'https://t.me/' + telegram, false)" class="qr-img" src="/qr.png">
-            </div>
-          </div>
-          <div class="df">
-            <a class="cxy" #emailUrl [href]="'mailto:' + email" target="_blank">
-              <img class="contact-img" src="/email.png">
-            </a>
-            <div (click)="emailUrl.click()" class="contact-line cy">{{email}}</div>
-            <div class="cy ml-1">
-              <img (click)="copyEmail($event)" class="copy-img" src="/copy.png">
-            </div>
-          </div>
-        </div>
-        <div class="df text-line">
-          <div class="cxy">
-            <img class="contact-img" src="/contact.png">
-          </div>
-          <div (click)="showContact = !showContact" class="contact-line cy">Заполнить форму обратной связи</div>
         </div>
         <div class="text-line">ООО "Битлаб" <a href="https://it-bitlab.ru" target="_blank">it-bitlab.ru</a></div>
       </div>
@@ -61,5 +87,7 @@
 </div>
 <div class="tooltip" *ngIf="tooltip.text != ''" [ngStyle]="getTextLocationStyle(tooltip)" [@in]="tooltip.text != ''">{{tooltip.text}}</div>
 <qrcode class="qr-code" *ngIf="qrCode.text != ''" [ngStyle]="getTextLocationStyle(qrCode)" [qrdata]="qrCode.text" [width]="128"></qrcode>
-<app-contact class="contact" *ngIf="showContact"></app-contact>
+<div class="contact" *ngIf="showContact">
+  <app-contact (closed)="showContact = false"></app-contact>
+</div>
 

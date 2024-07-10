@@ -19,7 +19,7 @@ import {NavigationStart, Router} from "@angular/router";
       transition('closed => init',
         [
           animate(
-            '1s',
+            '0.5s',
             keyframes([
               style(
                 {
@@ -44,7 +44,7 @@ import {NavigationStart, Router} from "@angular/router";
       transition('closed => init',
         [
           animate(
-            '1s',
+            '0.5s',
             keyframes([
               style(
                 {
@@ -65,6 +65,16 @@ import {NavigationStart, Router} from "@angular/router";
         ]),
       transition('init => closed', [animate('100ms', style({opacity: 0}))]),
     ]),
+    trigger('flipState', [
+      state('active', style({
+        transform: 'rotateY(180deg)'
+      })),
+      state('inactive', style({
+        transform: 'rotateY(0)'
+      })),
+      transition('active => inactive', animate('500ms')),
+      transition('inactive => active', animate('500ms'))
+    ])
   ]
 
 })
@@ -105,7 +115,7 @@ export class OffersComponent implements OnInit{
       'Настройка сети, безопасности, VPN и удалённого подключения.'
     ]),
   ];
-
+  flipped: Offer[] = [];
   init = false;
   constructor(public router: Router) {
   }
@@ -113,6 +123,22 @@ export class OffersComponent implements OnInit{
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
       let e = event as NavigationStart;
       this.init = e.url.includes('offers');
+      setTimeout(() => {
+        this.flipped = [];
+      }, 1000);
     });
+  }
+
+  toggleFlip(offer: Offer) {
+    if (this.flipped.includes(offer)){
+      this.flipped.splice(this.flipped.indexOf(offer), 1);
+    }
+    else{
+      this.flipped.push(offer);
+    }
+  }
+
+  getFlipState(offer: Offer) {
+    return this.flipped.includes(offer) ? 'active' : 'inactive';
   }
 }

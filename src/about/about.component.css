@@ -33,9 +33,14 @@
   height: 45vh;
   padding-left: 25%;
 }
-.text-article {
+.text-article-header {
   padding-top: 2vh;
   padding-bottom: 0.5vh;
+}
+.text-article{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 2vh;
+  padding: 2vh;
 }
 .team-img{
   height: 40vh;
@@ -55,13 +60,27 @@
   cursor: pointer;
 }
 .copy-img{
-  height: 4vh;
+  height: 2.5vh;
   cursor: pointer;
 }
 .qr-img{
-  height: 3vh;
+  height: 2.5vh;
   cursor: pointer;
-  padding-left: 1vh;
+}
+.open-img{
+  height: 2.3vh;
+  cursor: pointer;
+}
+.button-image{
+  height: 3vh;
+  width: 3vh;
+}
+.button-image:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.button-img{
+  height: 2.3vh;
+  cursor: pointer;
 }
 .tooltip{
   background-color: rgba(51, 51, 51, 0.75);

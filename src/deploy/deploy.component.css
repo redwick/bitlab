@@ -19,17 +19,23 @@
   font-size: 2vh;
 }
 .column-height{
-  height: 50vh;
+  height: 44vh;
 }
 .use-image{
   display: flex;
   justify-content: center;
 }
 .cloud-img{
-  height: 45vh;
+  height: 42vh;
   padding-left: 15%;
 }
 .server-img{
-  height: 45vh;
+  height: 42vh;
   padding-left: 25%;
+}
+.text-article{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 2vh;
+  padding: 1vh;
+  margin-top: 2vh;
 }

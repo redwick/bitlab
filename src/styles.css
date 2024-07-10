@@ -17,6 +17,10 @@ head,body{
   display: flex;
   justify-content: center;
 }
+.ox{
+  display: flex;
+  justify-content: space-between;
+}
 .cy{
   display: flex;
   align-items: center;
@@ -34,4 +38,15 @@ head,body{
 }
 .ml-1{
   margin-left: 1%;
+}
+.rx{
+  display: flex;
+  justify-content: flex-end;
+}
+.lx{
+  display: flex;
+  justify-content: flex-start;
+}
+.ul-no-margin{
+  margin: 0;
 }

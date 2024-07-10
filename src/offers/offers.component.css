@@ -21,25 +21,21 @@
 .offers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 2%;
+  padding: 2vh 4vh 4vh;
   gap: 8vh;
   row-gap: 2vh;
 }
 .offer-header{
   color: var(--main-active-color);
   font-size: 28px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   text-align: center;
-  padding-left: 25px;
+  padding-top: 2vh;
 }
 .offer-header-and-image{
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  padding: 2vh 3vh 3vh;
 }
 .offer-image-img{
-  height: 14vh;
+  height: 20vh;
 }
 .offer-descr{
   font-size: 1.8vh;
@@ -51,4 +47,53 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+.text-article{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 2vh;
+  padding: 1vh;
+}
+
+.offers {
+  perspective: 100vh;
+}
+.offer{
+  width: 20vw;
+  height: 35vh;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  cursor: pointer;
+  &.front {
+    transform: rotateY(0deg);
+  }
+  &.back {
+    transform: rotateY(-180deg);
+  }
+}
+.button-rotate{
+  display: flex;
+  justify-content: center;
+  width: 15vh;
+  height: 3vh;
+  background-color: rgba(128, 128, 128, 0.4);
+  color: white;
+  border-radius: 1vh;
+}
+.rotate-img{
+  height: 2.5vh;
+  padding-left: 1vh;
+}
+.rotate{
+  position: absolute;
+  left: 50%;
+  bottom: 2vh;
+  transform: translateX(-50%);
 }

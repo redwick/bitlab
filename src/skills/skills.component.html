@@ -1,33 +1,26 @@
 <div class="section">
-  <div class="two-columns">
-    <div class="first-column">
-      <div class="text-header">МЫ ИСПОЛЬЗУЕМ</div>
-      <div class="text-descr">
-        <div [@left]="init ? 'init' : 'closed'">
-          <ul class="use-ul">
-            <li *ngFor="let use of uses">{{use}}</li>
-          </ul>
+  <div class="text-header">МЫ ИСПОЛЬЗУЕМ</div>
+  <div class="cx text-article-header">
+    <div class="text-descr cxy">
+      <div class="text-article" [@left]="init ? 'init' : 'closed'">
+        <div class="text-highlight text-article-descr header">ПРИМЕНЯЕМ</div>
+        <div class="ul-no-margin">
+          <div class="cx" *ngFor="let use of uses">{{use}}</div>
         </div>
+        <div class="text-highlight text-article-descr" [@text-color]="init ? 'init' : 'closed'">средства и инструменты разработки</div>
       </div>
-      <div class="column-height" [@bottom]="init ? 'init' : 'closed'">
-        <img class="use-img" src="/use.png">
-      </div>
-      <div class="text-descr text-highlight" [@text-color]="init ? 'init' : 'closed'">средства и инструменты разработки</div>
-
     </div>
-    <div class="second-column">
-      <div class="text-header">МЫ ПОЛУЧАЕМ</div>
-      <div class="text-descr">
-        <div [@right]="init ? 'init' : 'closed'">
-          <ul class="have-ul">
-            <li *ngFor="let have of having">{{have}}</li>
-          </ul>
+    <div class="cxy" [@bottom]="init ? 'init' : 'closed'">
+      <img class="use-img text-article" src="/use.png">
+    </div>
+    <div class="text-descr cy">
+      <div class="text-article" [@right]="init ? 'init' : 'closed'">
+        <div class="text-highlight text-article-descr header">ПОЛУЧАЕМ</div>
+        <div class="ul-no-margin">
+          <div class="cx" *ngFor="let have of having">{{have}}</div>
         </div>
+        <div class="text-highlight text-article-descr" [@text-color]="init ? 'init' : 'closed'">информационные системы и приложения</div>
       </div>
-      <div class="column-height" [@bottom]="init ? 'init' : 'closed'">
-        <img class="have-img" src="/have.png">
-      </div>
-      <div class="text-highlight text-descr" [@text-color]="init ? 'init' : 'closed'">информационные системы и приложения</div>
     </div>
   </div>
 </div>
