@@ -1,5 +1,5 @@
 <div class="section">
-  <div class="text-header">МЫ ПРЕДЛАГАЕМ</div>
+<!--  <div class="text-header">МЫ ПРЕДЛАГАЕМ</div>-->
   <div class="offers-header">
     <div class="offers">
       <div (click)="toggleFlip(offer)" [@flipState]="getFlipState(offer)" class="offer text-article" *ngFor="let offer of offers; let i = index" [@right]="init && i % 2 == 0 ? 'init' : 'closed'" [@left]="init && i % 2 != 0 ? 'init' : 'closed'">
@@ -9,11 +9,12 @@
               <img class="offer-image-img" [src]="'/' + offer.image">
             </div>
             <div class="offer-header cx">{{offer.title}}</div>
+            <div class="offer-subtitle cx">{{offer.subtitle}}</div>
           </div>
           <div class="rotate">
             <div class="button-rotate">
               <div class="cxy">
-                ПОДРОБНЕЕ
+                Подробнее
               </div>
             </div>
           </div>

@@ -1,8 +1,12 @@
 .section{
   height: 100%;
-  background-image: url("/background-header.png");
+  background-image: url("/background-header1.png");
   background-size: cover;
   color: var(--main-color);
+}
+.logo{
+  padding-top: 20px;
+  padding-left: 20px;
 }
 .logo-image{
   width: 25vw;
@@ -12,16 +16,22 @@
   position: absolute;
   right: calc(5% + 200px);
   top: 20vh;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 600;
 }
 .text-second-row{
   font-size: 15vh;
   position: absolute;
   left: calc(3% + 200px);
   top: 45vh;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 600;
 }
 .text-third-row{
   font-size: 19vh;
   position: absolute;
   right: calc(5% + 200px);
   top: 65vh;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 600;
 }

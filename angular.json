@@ -27,7 +27,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "public/fonts/Roboto.css",
+              "public/fonts/Montserrat-ExtraBold.css",
+              "public/fonts/SourceSans3-Regular.css",
+              "public/fonts/Inter-Regular.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

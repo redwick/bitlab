@@ -4,14 +4,27 @@ head,body{
   overflow: hidden;
 }
 :root{
-  --main-color: #333333;
-  --main-active-color: #fd0843;
+  --main-color: #ffffff;
+  --second-color: #000000;
+  --main-active-color: #fd0844;
+}
+.w-100{
+  width: 100%;
 }
 .df{
   display: flex;
 }
+.flex-col{
+  flex-direction: column;
+}
 .mx-20{
   margin: 0 10px 0 10px;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+.mb-20{
+  margin-bottom: 20px;
 }
 .cx{
   display: flex;

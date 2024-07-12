@@ -1,10 +1,13 @@
 .navi{
   height: 7vh;
-  background-color: var(--main-color);
+  background-color: var(--second-color);
   color: white;
   display: flex;
   justify-content: flex-end;
   z-index: 100;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
 }
 .navi-active{
   background-color: var(--main-active-color);

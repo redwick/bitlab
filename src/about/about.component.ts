@@ -3,7 +3,7 @@ import {NgForOf, NgIf, NgStyle} from "@angular/common";
 import {NavigationStart, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {animate, keyframes, style, transition, trigger} from "@angular/animations";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {QRCodeModule} from "angularx-qrcode";
 import {TextLocation} from "./text-location";
 import {ContactComponent} from "./contact/contact.component";
@@ -17,7 +17,8 @@ import {ContactComponent} from "./contact/contact.component";
     NgIf,
     FormsModule,
     QRCodeModule,
-    ContactComponent
+    ContactComponent,
+    ReactiveFormsModule
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',

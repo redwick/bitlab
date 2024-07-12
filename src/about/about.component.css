@@ -1,22 +1,63 @@
 .section{
   height: 100%;
+  background-color: var(--second-color);
   color: var(--main-color);
   position: relative;
   padding-right: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding-top: 10vh;
 }
 .text-header{
   color: var(--main-active-color);
-  font-size: 5vh;
-  padding-left: 4%;
-  padding-top: 2%;
+  font-size: 1.7vh;
+  font-weight: 600;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  letter-spacing: 3px;
 }
 .two-columns{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1fr;
 }
 .text-descr{
   padding: 3% 3% 3% 4%;
   font-size: 2.5vh;
+}
+.text-big{
+  color: var(--main-color);
+  font-size: 6vh;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 600;
+  padding-top: 3vh;
+}
+.tile-contact{
+  width: 100%;
+  color: #606060;
+  background-color: white;
+  padding: 15px;
+  border-radius: 16px;
+  margin-bottom: 2vh;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.icons{
+  background-color: rgb(253 8 68 / 15%);
+  padding: 10px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-right: 20px;
+}
+.form{
+  background-color: #ffffff0f;
+  padding: 20px;
+  border-radius: 20px;
+  min-width: 25vw;
+}
+.first-column{
+  padding-right: 20%;
+}
+.second-column{
+  padding-left: 20%;
 }
 .column-height{
   height: 50vh;
@@ -56,8 +97,13 @@
   grid-template-columns: 1fr 1fr 2fr;
 }
 .contact-line{
-  padding-left: 2%;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 2vh;
+}
+.min-text{
+  font-size: 1.2vh;
+  margin-bottom: 5px;
 }
 .copy-img{
   height: 2.5vh;
@@ -106,4 +152,37 @@ ul{
   transform: translate(-50%, -50%);
   background-color: white;
   z-index: 200;
+}
+.subtitle{
+  color: #868587;
+  font-size: 13px;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.subtitle-form{
+  color: #868587;
+  font-size: 13px;
+  padding-bottom: 3px;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.input-form{
+  padding: 15px 10px;
+  border-radius: 8px;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.text-form{
+  min-height: 5vh;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-active-color);
+  color: white;
+  border-radius: 1vh;
+  padding: 12px 20px;
+  font-family: Inter-Regular, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  width: fit-content;
 }
