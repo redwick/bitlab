@@ -40,7 +40,7 @@
     </div>
     <div class="second-column cy">
       <div class="" [@right]="init ? 'init' : 'closed'">
-        <div class="form">
+        <div class="form" [formGroup]="contacts">
           <div class="df flex-col mb-20">
             <label for="name" class="subtitle-form">Ваше имя</label>
             <input id="name" class="input-form" type="text" placeholder="Ваше имя" formControlName="name" required>

@@ -1,8 +1,15 @@
 <div class="section">
-<!--  <div class="text-header">МЫ ПРЕДЛАГАЕМ</div>-->
+  <div class="text-header">Что мы умеем?</div>
   <div class="offers-header">
     <div class="offers">
-      <div (click)="toggleFlip(offer)" [@flipState]="getFlipState(offer)" class="offer text-article" *ngFor="let offer of offers; let i = index" [@right]="init && i % 2 == 0 ? 'init' : 'closed'" [@left]="init && i % 2 != 0 ? 'init' : 'closed'">
+      <div (click)="toggleFlip(offer)" [@flipState]="getFlipState(offer)" class="offer text-article" *ngFor="let offer of offers; let i = index"
+           [@left-top]="init && (i == 0) ? 'init' : 'closed'"
+           [@right-top]="init && (i == 2) ? 'init' : 'closed'"
+           [@left-bottom]="init && (i == 3) ? 'init' : 'closed'"
+           [@right-bottom]="init && (i == 5) ? 'init' : 'closed'"
+           [@top]="init && (i == 1) ? 'init' : 'closed'"
+           [@bottom]="init && (i == 4) ? 'init' : 'closed'"
+      >
         <div class="side front">
           <div class="offer-header-and-image">
             <div class="cxy">
@@ -20,10 +27,12 @@
           </div>
         </div>
         <div class="side back">
-          <div class="offer-header cx">{{offer.title}}</div>
-          <ul class="offer-descr">
-            <li class="offer-descr-line" *ngFor="let s of offer.descr">{{s}}</li>
-          </ul>
+          <div class="offer-header pb-20 cx">{{offer.title}}</div>
+          <div class="offer-descr padding-20">
+            <div *ngFor="let s of offer.descr">
+              <div class="offer-descr-line subtitle-back">{{s}}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

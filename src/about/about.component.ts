@@ -3,7 +3,7 @@ import {NgForOf, NgIf, NgStyle} from "@angular/common";
 import {NavigationStart, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {animate, keyframes, style, transition, trigger} from "@angular/animations";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {QRCodeModule} from "angularx-qrcode";
 import {TextLocation} from "./text-location";
 import {ContactComponent} from "./contact/contact.component";
@@ -155,6 +155,12 @@ export class AboutComponent implements OnInit{
   showContact = false;
 
 
+  contacts = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    text: new FormControl('', [Validators.required]),
+    topic: new FormControl('offer'),
+  });
 
   constructor(public router: Router) {
   }

@@ -1,42 +1,50 @@
 <div class="section">
+  <div class="text-header">Варианты реализации</div>
+  <div class="sub-text">Основные варианты развертывания вашего программного обеспечения. Вы выбираете - мы делаем.</div>
+
   <div class="two-columns">
-    <div class="first-column">
-      <div class="text-header">ОБЛАЧНОЕ РЕШЕНИЕ</div>
-      <div class="column-height cxy" [@left]="init ? 'init' : 'closed'">
-        <img class="cloud-img text-article" src="/cloud.png">
+    <div class="f-column mr-4hv" [@left]="init ? 'init' : 'closed'">
+      <div class="deploy-header df">
+        <div class="w-20 cx cy">
+          <img src="/cloud.svg" height="40">
+        </div>
+        <div class="w-80 cy">Облачные решения</div>
       </div>
-      <div class="text-descr" [@bottom]="init ? 'init' : 'closed'">
+      <div class="text-descr" >
         <div class="text-article">
-          <div class="text-highlight">Плюсы:</div>
-          <ul>
-            <li *ngFor="let c of cloud.plus">{{c}}</li>
-          </ul>
+          <div class="df pb-20" *ngFor="let c of cloud.plus">
+            <div class="mr-10"><img src="/checkmark.svg" height="34"></div>
+            <div>{{c}}</div>
+          </div>
         </div>
         <div class="text-article">
-          <div class="text-highlight">Минусы:</div>
-          <ul>
-            <li *ngFor="let c of cloud.minus">{{c}}</li>
-          </ul>
+          <div class="df pb-20" *ngFor="let c of cloud.minus">
+            <div class="mr-10"><img src="/minus.svg " height="34"></div>
+            <div>{{c}}</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="second-column">
-      <div class="text-header">СЕРВЕРНОЕ РЕШЕНИЕ</div>
-      <div class="column-height cxy" [@right]="init ? 'init' : 'closed'">
-        <img class="server-img text-article" src="/server.png">
+    <div class="f-column" [@right]="init ? 'init' : 'closed'">
+
+      <div class="deploy-header df">
+        <div class="w-20 cx cy">
+          <img src="/serv.svg" height="40">
+        </div>
+        <div class="w-80 cy">Собственные сервера</div>
       </div>
-      <div class="text-descr" [@bottom]="init ? 'init' : 'closed'">
+      <div class="text-descr" >
         <div class="text-article">
-          <div class="text-highlight">Плюсы:</div>
-          <ul>
-            <li *ngFor="let c of server.plus">{{c}}</li>
-          </ul>
+          <div class="df pb-20" *ngFor="let c of server.plus">
+            <div class="mr-10"><img src="/checkmark.svg" height="34"></div>
+            <div>{{c}}</div>
+          </div>
         </div>
         <div class="text-article">
-          <div class="text-highlight">Минусы:</div>
-          <ul>
-            <li *ngFor="let c of server.minus">{{c}}</li>
-          </ul>
+          <div class="df pb-20" *ngFor="let c of server.minus">
+            <div class="mr-10"><img src="/minus.svg " height="34"></div>
+            <div>{{c}}</div>
+          </div>
         </div>
       </div>
     </div>

@@ -15,17 +15,17 @@ import {NavigationStart, Router} from "@angular/router";
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css',
   animations: [
-    trigger('right', [
+    trigger('right-top', [
       transition('closed => init',
         [
           animate(
-            '0.5s',
+            '1s',
             keyframes([
               style(
                 {
                   opacity: 0,
                   color: 'var(--main-active-color)',
-                  transform: 'translate(100px)',
+                  transform: 'translate(100px, -100px)',
                   offset: 0
                 }
               ),
@@ -40,17 +40,117 @@ import {NavigationStart, Router} from "@angular/router";
         ]),
       transition('init => closed', [animate('100ms', style({opacity: 0}))]),
     ]),
-    trigger('left', [
+    trigger('right-bottom', [
       transition('closed => init',
         [
           animate(
-            '0.5s',
+            '1s',
             keyframes([
               style(
                 {
                   opacity: 0,
                   color: 'var(--main-active-color)',
-                  transform: 'translate(-100px)',
+                  transform: 'translate(100px, 100px)',
+                  offset: 0
+                }
+              ),
+              style({
+                opacity: 1,
+                color: 'var(--main-color)',
+                transform: 'translate(0)',
+                offset: 1
+              }),
+            ]),
+          )
+        ]),
+      transition('init => closed', [animate('100ms', style({opacity: 0}))]),
+    ]),
+    trigger('left-top', [
+      transition('closed => init',
+        [
+          animate(
+            '1s',
+            keyframes([
+              style(
+                {
+                  opacity: 0,
+                  color: 'var(--main-active-color)',
+                  transform: 'translate(-100px, -100px)',
+                  offset: 0
+                }
+              ),
+              style({
+                opacity: 1,
+                color: 'var(--main-color)',
+                transform: 'translate(0)',
+                offset: 1
+              }),
+            ]),
+          )
+        ]),
+      transition('init => closed', [animate('100ms', style({opacity: 0}))]),
+    ]),
+    trigger('left-bottom', [
+      transition('closed => init',
+        [
+          animate(
+            '1s',
+            keyframes([
+              style(
+                {
+                  opacity: 0,
+                  color: 'var(--main-active-color)',
+                  transform: 'translate(-100px, 100px)',
+                  offset: 0
+                }
+              ),
+              style({
+                opacity: 1,
+                color: 'var(--main-color)',
+                transform: 'translate(0)',
+                offset: 1
+              }),
+            ]),
+          )
+        ]),
+      transition('init => closed', [animate('100ms', style({opacity: 0}))]),
+    ]),
+    trigger('top', [
+      transition('closed => init',
+        [
+          animate(
+            '1s',
+            keyframes([
+              style(
+                {
+                  opacity: 0,
+                  color: 'var(--main-active-color)',
+                  transform: 'translateY(-50px)',
+                  offset: 0
+                }
+              ),
+              style({
+                opacity: 1,
+                color: 'var(--main-color)',
+                transform: 'translate(0)',
+                offset: 1
+              }),
+            ]),
+          )
+        ]),
+      transition('init => closed', [animate('100ms', style({opacity: 0}))]),
+    ]),
+    trigger('bottom', [
+      transition('closed => init',
+        [
+          animate(
+            '1s',
+            keyframes([
+              style(
+                {
+                  opacity: 0,
+                  color: 'var(--main-active-color)',
+                  transform: 'translateY(50px)',
                   offset: 0
                 }
               ),

@@ -115,10 +115,9 @@ import {filter} from "rxjs";
 })
 export class SkillsComponent implements OnInit{
   uses: string[] = [
-    'современные',
-    'популярные',
-    'практичные',
-    'проверенные',
+    'Распределенность',
+    'Отказоустойчивость',
+    'Масштабируемость'
   ];
   having: string[] = [
     'распределённые',

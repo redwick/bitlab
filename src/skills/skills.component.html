@@ -1,26 +1,67 @@
 <div class="section">
-  <div class="text-header">МЫ ИСПОЛЬЗУЕМ</div>
-  <div class="cx text-article-header">
+  <div class="two-columns">
     <div class="text-descr cxy">
       <div class="text-article" [@left]="init ? 'init' : 'closed'">
-        <div class="text-highlight text-article-descr header">ПРИМЕНЯЕМ</div>
-        <div class="ul-no-margin">
-          <div class="cx" *ngFor="let use of uses">{{use}}</div>
+        <div class="text-article-descr header">Современные <br> технологии</div>
+        <div class="sub-text-skill pb-20">В нашем программном обеспечении мы используем самый современный и проверенный стек технологий.</div>
+        <div class="df mb-20" *ngFor="let use of uses">
+          <div class="mr-10 cx cy">
+            <img src="/checkmark-v.svg" height="30">
+          </div>
+          <div class="text-skill">{{use}}</div>
         </div>
-        <div class="text-highlight text-article-descr" [@text-color]="init ? 'init' : 'closed'">средства и инструменты разработки</div>
       </div>
     </div>
-    <div class="cxy" [@bottom]="init ? 'init' : 'closed'">
-      <img class="use-img text-article" src="/use.png">
-    </div>
-    <div class="text-descr cy">
-      <div class="text-article" [@right]="init ? 'init' : 'closed'">
-        <div class="text-highlight text-article-descr header">ПОЛУЧАЕМ</div>
-        <div class="ul-no-margin">
-          <div class="cx" *ngFor="let have of having">{{have}}</div>
+    <div class="cxy" [@right]="init ? 'init' : 'closed'">
+      <div class="cx cy flex-col">
+        <div class="row1 df">
+          <div class="img-cont mr-3vh">
+            <img src="/angular.png" height="60">
+          </div>
+          <div class="img-cont">
+            <img src="/java.png" height="60">
+          </div>
         </div>
-        <div class="text-highlight text-article-descr" [@text-color]="init ? 'init' : 'closed'">информационные системы и приложения</div>
+        <div class="row2 df">
+          <div class="img-cont mr-3vh">
+            <img src="/scala.png" height="60">
+          </div>
+          <div class="img-cont mr-3vh">
+            <img src="/nestjs.png" height="60">
+          </div>
+          <div class="img-cont">
+            <img src="/docker.png" height="60">
+          </div>
+        </div>
+        <div class="row3 df">
+          <div class="img-cont mr-3vh">
+            <img src="/mongodb.png" height="60">
+          </div>
+          <div class="img-cont">
+            <img src="/kubernetes.png" height="60">
+          </div>
+        </div>
+       <div class="row4 df">
+         <div class="img-cont mr-3vh">
+           <img src="/postgresql.png" height="60">
+         </div>
+         <div class="img-cont mr-3vh">
+           <img src="/node.png" height="60">
+         </div>
+         <div class="img-cont">
+           <img src="/nginx.png" height="60">
+         </div>
+       </div>
       </div>
     </div>
+<!--    <div class="text-descr cy">-->
+<!--      <div class="text-article" [@right]="init ? 'init' : 'closed'">-->
+<!--        <div class="text-highlight text-article-descr header">ПОЛУЧАЕМ</div>-->
+<!--        <div class="ul-no-margin">-->
+<!--          <div class="cx" *ngFor="let have of having">{{have}}</div>-->
+<!--        </div>-->
+<!--        <div class="text-highlight text-article-descr" [@text-color]="init ? 'init' : 'closed'">информационные системы и приложения</div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </div>
