@@ -165,6 +165,26 @@ import {NavigationStart, Router} from "@angular/router";
         ]),
       transition('init => closed', [animate('100ms', style({opacity: 0}))]),
     ]),
+    trigger('background', [
+      transition('closed => init',
+        [
+          animate(
+            '1s',
+            keyframes([
+              style({
+                  background: 'var(--second-color)',
+                  offset: 0
+                }
+              ),
+              style({
+                background: 'transparent',
+                offset: 1
+              }),
+            ]),
+          )
+        ]),
+      transition('init => closed', [animate('100ms', style({opacity: 0}))]),
+    ]),
     trigger('flipState', [
       state('active', style({
         transform: 'rotateY(180deg)'

@@ -4,7 +4,6 @@
   position: relative;
   padding-right: 3%;
   background-color: var(--second-color);
-  padding-top: 10vh;
 }
 .text-header{
   color: var(--main-active-color);
