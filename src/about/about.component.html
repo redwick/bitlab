@@ -58,7 +58,8 @@
             <textarea id="text" class="input-form text-form" placeholder="Введите ваше сообщение" formControlName="text" required></textarea>
           </div>
           <div class="df flex-col mb-20">
-            <img src="capcha.png" width="80%">
+            <re-captcha (resolved)="resolved($event)" siteKey="6LedWBsqAAAAABpWo7pmpUpo62jHU5dKxOL0TvuK"></re-captcha>
+<!--            <img src="capcha.png" width="80%">-->
           </div>
           <div class="button">
             <div class="cxy">

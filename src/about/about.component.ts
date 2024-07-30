@@ -7,6 +7,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {QRCodeModule} from "angularx-qrcode";
 import {TextLocation} from "./text-location";
 import {ContactComponent} from "./contact/contact.component";
+import {RecaptchaModule} from "ng-recaptcha";
 
 @Component({
   selector: 'app-about',
@@ -18,7 +19,8 @@ import {ContactComponent} from "./contact/contact.component";
     FormsModule,
     QRCodeModule,
     ContactComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
@@ -153,6 +155,7 @@ export class AboutComponent implements OnInit{
   tooltip = new TextLocation();
   qrCode = new TextLocation();
   showContact = false;
+  captchaResolved = false;
 
 
   contacts = new FormGroup({
@@ -190,5 +193,9 @@ export class AboutComponent implements OnInit{
       left: 'calc(' + textLocation.x + 'px + 1vh)',
       top: 'calc(' + textLocation.y + 'px - 2vh)',
     };
+  }
+
+  resolved(event: string | null) {
+    this.captchaResolved = true;
   }
 }

@@ -1,0 +1,1 @@
+git pull;npm i --force;ng b;scp -r ./dist/bitlab/* root@10.70.0.50:/var/www/it-bitlab.ru/
