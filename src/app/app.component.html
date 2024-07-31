@@ -1,1 +1,6 @@
-<sections class="sections" [components]="components" [naviComponent]="NaviComponent" [routes]="routes" [dotsEnabled]="true"></sections>
+@if (d.isMobile()){
+  <app-mobile></app-mobile>
+}
+@else{
+  <sections class="sections" [components]="components" [naviComponent]="NaviComponent" [routes]="routes" [dotsEnabled]="true"></sections>
+}
