@@ -2,7 +2,7 @@
   <div #navi class="navi" *ngIf="naviComponent != null">
     <ng-template [ngComponentOutlet]="naviComponent"></ng-template>
   </div>
-  <div *ngFor="let c of components">
+  <div *ngFor="let c of components" class="component">
     <div [ngStyle]=componentStyle>
       <ng-template [ngComponentOutlet]="c"></ng-template>
     </div>

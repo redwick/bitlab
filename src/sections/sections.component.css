@@ -28,3 +28,6 @@
     background-color: var(--main-active-color);
   }
 }
+.component{
+  height: 100vh;
+}

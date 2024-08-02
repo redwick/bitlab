@@ -3,9 +3,11 @@ head,body{
   margin: 0;
 }
 :root{
+  overflow: hidden;
   --main-color: #ffffff;
   --second-color: #000000;
   --main-active-color: #fd0844;
+  background-color: var(--second-color);
 }
 .w-15{
   width: 15%;
