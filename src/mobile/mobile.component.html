@@ -1,1 +1,37 @@
-<p>mobile works!</p>
+<div class="logo">
+  <img class="logo-image" src="/logo.png">
+</div>
+<div class="ovf-auto">
+  <div class="section">
+    <div class="head-text">IT решения для вашего бизнеса</div>
+    <div class="arrow cxy ">
+      <img src="/double-down.svg" height="100">
+    </div>
+  </div>
+  <div class="section">
+    <div class="text-header">Что мы умеем?</div>
+    <div class="offer-box" *ngFor="let offer of offers; let i = index">
+      <div class="df">
+        <div class="cxy">
+          <img class="offer-img" [src]="'/' + offer.image" height="30">
+        </div>
+        <div>
+          <div class="offer-header">{{offer.title}}</div>
+          <div class="offer-subtitle">{{offer.subtitle}}</div>
+        </div>
+        <div class="arrow cy">
+          <img src="/down.svg" height="16">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="text-header">Современные технологии</div>
+    <div class="arrow cxy ">
+      <img src="/double-down.svg" height="100">
+    </div>
+  </div>
+
+
+
+</div>

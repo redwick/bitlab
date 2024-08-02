@@ -1,0 +1,62 @@
+head, body{
+  overflow: scroll!important;
+}
+.ovf-auto{
+  overflow: scroll!important;
+  background-color: var(--second-color);
+}
+.section{
+  min-height: calc(100vh - 19vw);
+  background-color: var(--second-color);
+  color: var(--main-color);
+  padding: 2vh;
+}
+.logo{
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  background-color: var(--second-color);
+}
+.logo-image{
+  width: 30vw;
+}
+.head-text{
+  padding: 10vh 4vh 8vh 4vh;
+  font-size: 7vh;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 800;
+  color: var(--main-color);
+  line-height: 9vh;
+  text-align: center;
+}
+.text-header{
+  color: var(--main-color);
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 2%;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 900;
+}
+.offer-box{
+  background-color: #ffffff0f;
+  border-radius: 2vh;
+  padding: 1.5vh;
+  min-height: 5vh;
+  margin: 2.5vh 0;
+}
+.offer-header{
+  font-size: 1.8vh;
+  font-weight: 600;
+  font-family: Montserrat-ExtraBold, sans-serif;
+}
+.offer-subtitle{
+  color: #868587;
+  font-size: 1.2vh;
+  font-family: Inter-Regular, sans-serif;
+}
+.offer-img{
+  padding: 0 1vh 0 0;
+}
+.arrow{
+  margin-left: auto
+}
