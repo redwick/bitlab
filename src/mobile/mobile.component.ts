@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
 import {Offer} from "../offers/offer";
+import {PlusMinus} from "../deploy/plus-minus";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {RecaptchaModule} from "ng-recaptcha";
 
 @Component({
   selector: 'app-mobile',
   standalone: true,
   imports: [
     NgIf,
-    NgForOf
+    NgForOf,
+    FormsModule,
+    ReactiveFormsModule,
+    RecaptchaModule
   ],
   templateUrl: './mobile.component.html',
   styleUrl: './mobile.component.css'
@@ -43,5 +49,40 @@ export class MobileComponent {
       'Настройка сети, безопасности, VPN и удалённого подключения.'
     ], 'Проектирование и настройка IT инфраструктуры вашей компании.'),
   ];
+  uses: string[] = [
+    'Распределенность',
+    'Отказоустойчивость',
+    'Масштабируемость'
+  ];
+  cloud: PlusMinus = new PlusMinus([
+    'высокая эффективность, возможность подобрать оптимальные конфигурации серверов',
+    'быстрая масштабируемость, новые сервера добавляются за несколько минут',
+    'неограниченные ресурсы, нет необходимости заботится о вместимости серверного шкафа',
+  ], [
+    'ежемесячная плата, необходимо платить за обслуживание и резервное копирование серверов',
+    'зависимость от провайдера, вы полагаетесь на надёжность провайдера в предоставлении услуг',
+  ]);
+  server: PlusMinus = new PlusMinus([
+    'полная автономность, вы не зависите от работы провайдеров и сторонних сервисов',
+    'безопасность, только вы имеете доступ к серверам и регилируете их работу',
+    'отсутствие ежемесячной платы за обслуживание серверов',
+  ], [
+    'требуется больше времени на подготовку и запуск приложения',
+    'приобретение и сборка серверов требует значительных средств',
+    'масштабирование требует приобретения дополнительных серверов',
+  ]);
+  email = 'mail@it-bitlab.ru';
+  whatsapp = '+79992127238';
+  telegram = 'spiridovich_p';
+  contacts = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    text: new FormControl('', [Validators.required]),
+    topic: new FormControl('offer'),
+  });
+  captchaResolved = false;
+  resolved(event: string | null) {
+    this.captchaResolved = true;
+  }
 
 }

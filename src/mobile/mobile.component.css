@@ -9,7 +9,7 @@ head, body{
   min-height: calc(100vh - 19vw);
   background-color: var(--second-color);
   color: var(--main-color);
-  padding: 2vh;
+  padding: 3vh;
 }
 .logo{
   position: sticky;
@@ -37,6 +37,14 @@ head, body{
   font-family: Montserrat-ExtraBold, sans-serif;
   font-weight: 900;
 }
+.text-head{
+  color: var(--main-active-color);
+  font-size: 1.7vh;
+  font-weight: 600;
+  margin-left: 13%;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  letter-spacing: 3px;
+}
 .offer-box{
   background-color: #ffffff0f;
   border-radius: 2vh;
@@ -59,4 +67,91 @@ head, body{
 }
 .arrow{
   margin-left: auto
+}
+.sub-text-skill{
+  color: #afafaf;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  font-family: Inter-Regular, sans-serif;
+  font-size: 1.5vh;
+}
+.skills{
+  padding: 3vh 0 5vh 25%;
+}
+.text-skill{
+  font-family: Inter-Regular, sans-serif;
+  color: #868587;
+  margin-top: 5px;
+}
+.mb-2vh{
+  margin-bottom: 2vh;
+}
+.deploy-header{
+  color: var(--main-color);
+  font-size: 2vh;
+  font-weight: 600;
+  padding-bottom: 1vh;
+  font-family: Montserrat-ExtraBold, sans-serif;
+}
+.text-article{
+  border-radius: 2vh;
+  font-family: Inter-Regular, sans-serif;
+  color: #868587;
+  font-size: 1.6vh;
+}
+.tile-contact{
+  color: #606060;
+  background-color: white;
+  padding: 15px;
+  border-radius: 16px;
+  margin-bottom: 2vh;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.icons{
+  background-color: rgb(253 8 68 / 15%);
+  padding: 10px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-right: 20px;
+}
+.min-text{
+  font-size: 1.2vh;
+  margin-bottom: 5px;
+}
+.contact-line{
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2vh;
+}
+.pb-3vh{
+  padding-bottom: 3vh;
+}
+.form{
+  background-color: #ffffff0f;
+  padding: 20px;
+  border-radius: 20px;
+  min-width: 25vw;
+}
+.subtitle-form{
+  color: #868587;
+  font-size: 13px;
+  padding-bottom: 3px;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.input-form{
+  padding: 15px 10px;
+  border-radius: 8px;
+  font-family: SourceSans3-Regular, sans-serif;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-active-color);
+  color: white;
+  border-radius: 1vh;
+  padding: 12px 20px;
+  font-family: Inter-Regular, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  width: fit-content;
 }
