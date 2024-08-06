@@ -4,6 +4,7 @@ import {NgComponentOutlet, NgForOf, NgIf, NgStyle} from "@angular/common";
 import {NaviComponent} from "../navi/navi.component";
 import {filter} from "rxjs";
 import {routes} from "../app/app.routes";
+import {needsLinking} from "@angular/compiler-cli/linker";
 
 @Component({
   selector: 'sections',
@@ -28,7 +29,7 @@ export class SectionsComponent implements OnInit, AfterViewInit{
   amountOfSections = 0;
   naviHeight = 0;
   componentStyle = {
-    height: 'calc(100vh)'
+    height: 'calc(100vh)',
   };
 
   @HostListener('window:resize', ['$event'])
@@ -81,7 +82,6 @@ export class SectionsComponent implements OnInit, AfterViewInit{
         this.scrollDelay = false;
       }, this.scrollDelayAmount);
     }
-
   }
   scrollEvent(event: WheelEvent) {
     event.preventDefault();
