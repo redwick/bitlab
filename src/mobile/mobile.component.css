@@ -6,7 +6,6 @@ head, body{
   background-color: var(--second-color);
 }
 .section{
-  min-height: calc(100vh - 19vw);
   background-color: var(--second-color);
   color: var(--main-color);
   padding: 3vh;
@@ -16,6 +15,7 @@ head, body{
   top: 0;
   padding: 20px;
   background-color: var(--second-color);
+  z-index: 20;
 }
 .logo-image{
   width: 30vw;
@@ -154,4 +154,26 @@ head, body{
   font-weight: bold;
   font-size: 13px;
   width: fit-content;
+}
+.offer-description{
+  margin-top: 10px;
+  font-size: 12px;
+  overflow: hidden;
+}
+.header-dot{
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  &.active{
+    background-color: var(--main-active-color);
+  }
+}
+.header-dots{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }

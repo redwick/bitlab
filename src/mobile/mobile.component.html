@@ -1,8 +1,13 @@
 <div class="logo">
   <img class="logo-image" src="/logo.png">
+  <div class="df header-dots" (click)="scrollToTop($event)">
+    @for (sec of sections; track sec){
+      <div class="header-dot" [class.active]="sec == activeSection"></div>
+    }
+  </div>
 </div>
 <div class="ovf-auto">
-  <div class="section">
+  <div class="h100vh" (click)="scrollToOffers()" (touchstart)="headerTouchStart($event)" (touchend)="headerTouchEnd($event)">
     <div class="head-text">IT решения для вашего бизнеса</div>
     <div class="arrow cxy">
       <img src="/double-down.svg" height="100">
@@ -12,16 +17,21 @@
     <div class="text-header">Что мы умеем?</div>
     <div class="sub-text-skill pb-20 text-center">Мы обладаем достаточными компетенциями и опытом по следующим направлениям</div>
     <div class="offer-box" *ngFor="let offer of offers; let i = index">
-      <div class="df">
-        <div class="cxy">
-          <img class="offer-img" [src]="'/' + offer.image" height="30">
+      <div (click)="toggleOffer(i)">
+        <div class="df">
+          <div class="cxy">
+            <img class="offer-img" [src]="'/' + offer.image" height="30">
+          </div>
+          <div>
+            <div class="offer-header">{{offer.title}}</div>
+            <div class="offer-subtitle">{{offer.subtitle}}</div>
+          </div>
+          <div class="arrow cy">
+            <img src="/down.svg" height="16" [ngStyle]="getOfferImgStyle(i)">
+          </div>
         </div>
-        <div>
-          <div class="offer-header">{{offer.title}}</div>
-          <div class="offer-subtitle">{{offer.subtitle}}</div>
-        </div>
-        <div class="arrow cy">
-          <img src="/down.svg" height="16">
+        <div class="offer-description" [ngStyle]="getOfferDescriptionStyle(i)">
+          {{offer.descr}}
         </div>
       </div>
     </div>

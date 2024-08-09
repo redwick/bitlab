@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import {NgForOf, NgIf} from "@angular/common";
+import {Component, OnInit} from '@angular/core';
+import {NgForOf, NgIf, NgStyle} from "@angular/common";
 import {Offer} from "../offers/offer";
 import {PlusMinus} from "../deploy/plus-minus";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {RecaptchaModule} from "ng-recaptcha";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-mobile',
@@ -13,12 +14,13 @@ import {RecaptchaModule} from "ng-recaptcha";
     NgForOf,
     FormsModule,
     ReactiveFormsModule,
-    RecaptchaModule
+    RecaptchaModule,
+    NgStyle
   ],
   templateUrl: './mobile.component.html',
   styleUrl: './mobile.component.css'
 })
-export class MobileComponent {
+export class MobileComponent implements OnInit{
 
   offers: Offer[] = [
     new Offer('Сайты и Web-приложения', 'web.svg', [
@@ -84,5 +86,106 @@ export class MobileComponent {
   resolved(event: string | null) {
     this.captchaResolved = true;
   }
+  side = 0;
+  expandedOffers: number[] = [];
+  sections = [1, 2, 3, 4, 5];
+  activeSection = 1;
+  scrollTop = 0;
 
+  protected readonly scroll = scroll;
+
+  ngOnInit(): void {
+    window.onscroll = () => {
+      this.scrollTop = window.scrollY;
+      if (this.scrollTop < 844){
+        this.activeSection = 1;
+      }
+      else if (this.scrollTop < 1625){
+        this.activeSection = 2;
+      }
+      else if (this.scrollTop < 2360){
+        this.activeSection = 3;
+      }
+      else if (this.scrollTop < 3415){
+        this.activeSection = 4;
+      }
+      else{
+        this.activeSection = 5;
+      }
+    };
+  }
+  scrollToOffers() {
+    window.scrollTo({top: (window.innerHeight), behavior: 'smooth'});
+  }
+
+  touchMove(event: TouchEvent) {
+    console.log(event)
+  }
+
+  touchEnd(event: TouchEvent) {
+    console.log(event)
+  }
+
+  headerTouchStart(event: TouchEvent) {
+    this.side = event.touches[0].clientY;
+  }
+
+  headerTouchEnd(event: TouchEvent) {
+    let te = event.changedTouches[0].clientY;
+    if (te < this.side){
+      this.scrollToOffers();
+    }
+  }
+
+  getOfferDescriptionStyle(i: number) {
+    if (this.offerExpanded(i)){
+      return {
+        'max-height': '500px',
+        transition: '1s'
+      };
+    }
+    else{
+      return {
+        'max-height': 0,
+        opacity: 0,
+        transition: '0.5s'
+      };
+    }
+  }
+  getOfferImgStyle(i: number) {
+    if (this.offerExpanded(i)){
+      return {
+        transition: '0.5s',
+      };
+    }
+    else{
+      return {
+        transition: '0.5s',
+        transform: 'rotate(-90deg)'
+      };
+    }
+  }
+
+  toggleOffer(i: number) {
+    if (this.expandedOffers.includes(i)){
+      this.expandedOffers.splice(this.expandedOffers.indexOf(i), 1);
+    }
+    else{
+      this.expandedOffers.push(i);
+    }
+  }
+
+  offerExpanded(i: number) {
+    return this.expandedOffers.includes(i);
+  }
+
+  showOffset($event: MouseEvent) {
+    console.log(window.scrollY);
+  }
+
+  protected readonly window = window;
+
+  scrollToTop(event: MouseEvent) {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
 }
