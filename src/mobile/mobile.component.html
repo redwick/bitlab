@@ -155,20 +155,30 @@
       <div class="icons cy">
         <img src="/phone.svg" height="22">
       </div>
-      <div class="w-100 cx flex-col">
-        <div class="min-text">Phone / WhatsApp:</div>
-        <a class="cxy" #whatsappUrl [href]="'https://wa.me/' + whatsapp" target="_blank"></a>
-        <div (click)="whatsappUrl.click()" class="contact-line cy">+7 999 212-72-38</div>
+      <div class="w-100 df">
+        <div class="cx flex-col">
+          <div class="min-text">Phone / WhatsApp:</div>
+          <a class="cxy" #whatsappUrl [href]="'https://wa.me/' + whatsapp" target="_blank"></a>
+          <div (click)="whatsappUrl.click()" class="contact-line cy">+7 999 212-72-38</div>
+        </div>
+        <div class="p-ml-auto cxy">
+          <img (click)="whatsappUrl.click()" src="/wa.svg" class="qr-img">
+        </div>
       </div>
     </div>
     <div class="tile-contact df">
       <div class="icons cy">
         <img src="/telegram.svg" height="22">
       </div>
-      <div class="w-100 cx flex-col">
-        <div class="min-text">Telegram:</div>
-        <a class="cxy" #telegramUrl [href]="'https://t.me/' + telegram" target="_blank"></a>
-        <div (click)="telegramUrl.click()" class="contact-line cy">spiridovich_p</div>
+      <div class="w-100 df">
+        <div class="cx flex-col">
+          <div class="min-text">Telegram:</div>
+          <a class="cxy" #telegramUrl [href]="'https://t.me/' + telegram" target="_blank"></a>
+          <div (click)="telegramUrl.click()" class="contact-line cy">spiridovich_p</div>
+        </div>
+        <div class="p-ml-auto cxy">
+          <img (click)="telegramUrl.click()" class="qr-img" src="/tme.svg">
+        </div>
       </div>
     </div>
 

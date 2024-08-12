@@ -110,19 +110,11 @@
   cursor: pointer;
 }
 .qr-img{
-  height: 2.5vh;
-  cursor: pointer;
+  height: 5vh;
 }
 .open-img{
   height: 2.3vh;
   cursor: pointer;
-}
-.button-image{
-  height: 3vh;
-  width: 3vh;
-}
-.button-image:hover{
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .button-img{
   height: 2.3vh;

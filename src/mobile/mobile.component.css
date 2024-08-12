@@ -155,6 +155,26 @@ head, body{
   font-size: 13px;
   width: fit-content;
 }
+.img-cont{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff0f;
+  border-radius: 2vh;
+  padding: 1.2vh;
+}
+.mr-3vh{
+  margin-right: 1.2vh;
+}
+.row1{
+  padding-bottom: 1.2vh;
+}
+.row2{
+  padding-bottom: 1.2vh;
+}
+.row3{
+  padding-bottom: 1.2vh;
+}
 .offer-description{
   margin-top: 10px;
   font-size: 12px;
@@ -176,4 +196,7 @@ head, body{
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
+}
+.qr-img{
+  height: 5vh;
 }
