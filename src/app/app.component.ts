@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
+import {NavigationEnd, NavigationStart, Router, RouterOutlet} from '@angular/router';
 import {SectionsComponent} from "../sections/sections.component";
 import {HomeComponent} from "../home/home.component";
 import {OffersComponent} from "../offers/offers.component";
@@ -10,6 +10,7 @@ import {SkillsComponent} from "../skills/skills.component";
 import {DeviceDetectorService} from "ngx-device-detector";
 import {MobileComponent} from "../mobile/mobile.component";
 import {GoogleTagManagerService} from "angular-google-tag-manager";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,15 @@ export class AppComponent {
         };
         this.gtmService.pushTag(gtmTag);
       }
+    });
+    this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
+      let e = event as NavigationStart;
+      console.log(e.url);
+      const gtmTag = {
+        event: 'page',
+        pageName: e.url
+      };
+      this.gtmService.pushTag(gtmTag);
     });
   }
 }

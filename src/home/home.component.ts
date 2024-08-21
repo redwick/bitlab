@@ -118,13 +118,18 @@ export class HomeComponent implements OnInit{
   init = false;
 
   constructor(private router: Router, private gtmService: GoogleTagManagerService) {
-
   }
 
   ngOnInit(): void {
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
       let e = event as NavigationStart;
       this.init = e.url.includes('home') || e.url == '/';
+      console.log('home');
+      const gtmTag = {
+        event: 'page',
+        pageName: e.url
+      };
+      this.gtmService.pushTag(gtmTag);
     });
   }
 
