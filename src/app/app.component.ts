@@ -24,18 +24,8 @@ export class AppComponent {
   routes = ['home', 'offers', 'skills', 'deploy', 'about'];
   protected readonly NaviComponent = NaviComponent;
   constructor(public d: DeviceDetectorService, private router: Router, private gtmService: GoogleTagManagerService) {
-    this.router.events.forEach(item => {
-      if (item instanceof NavigationEnd) {
-        const gtmTag = {
-          event: 'page',
-          pageName: item.url
-        };
-        this.gtmService.pushTag(gtmTag);
-      }
-    });
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
       let e = event as NavigationStart;
-      console.log(e.url);
       const gtmTag = {
         event: 'page',
         pageName: e.url

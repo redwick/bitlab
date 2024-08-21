@@ -124,12 +124,6 @@ export class HomeComponent implements OnInit{
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
       let e = event as NavigationStart;
       this.init = e.url.includes('home') || e.url == '/';
-      console.log('home');
-      const gtmTag = {
-        event: 'page',
-        pageName: e.url
-      };
-      this.gtmService.pushTag(gtmTag);
     });
   }
 
