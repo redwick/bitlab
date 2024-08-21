@@ -7,8 +7,9 @@ import {
   transition, keyframes,
 } from '@angular/animations';
 import {NgIf} from "@angular/common";
-import {NavigationStart, Router} from "@angular/router";
+import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {filter} from "rxjs";
+import {GoogleTagManagerService} from "angular-google-tag-manager";
 
 @Component({
   selector: 'app-home',
@@ -116,7 +117,8 @@ export class HomeComponent implements OnInit{
 
   init = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private gtmService: GoogleTagManagerService) {
+
   }
 
   ngOnInit(): void {
