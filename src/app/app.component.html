@@ -1,6 +1,6 @@
-@if (d.isMobile()){
-  <app-mobile></app-mobile>
+@if (d.isDesktop()){
+  <sections class="sections" [components]="components" [naviComponent]="NaviComponent" [routes]="routes" [dotsEnabled]="true"></sections>
 }
 @else{
-  <sections class="sections" [components]="components" [naviComponent]="NaviComponent" [routes]="routes" [dotsEnabled]="true"></sections>
+  <app-mobile></app-mobile>
 }
