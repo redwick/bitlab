@@ -22,7 +22,7 @@ head, body{
 }
 .head-text{
   padding: 10vh 4vh 8vh 4vh;
-  font-size: 7vh;
+  font-size: 60px;
   font-family: Montserrat-ExtraBold, sans-serif;
   font-weight: 800;
   color: var(--main-color);
@@ -31,7 +31,7 @@ head, body{
 }
 .text-header{
   color: var(--main-color);
-  font-size: 3vh;
+  font-size: 30px;
   text-align: center;
   padding-top: 2%;
   font-family: Montserrat-ExtraBold, sans-serif;
@@ -66,6 +66,7 @@ head, body{
   padding: 0 1vh 0 0;
 }
 .arrow{
+  margin-bottom: -10px;
   margin-left: auto
 }
 .sub-text-skill{
@@ -90,7 +91,7 @@ head, body{
   color: var(--main-color);
   font-size: 2vh;
   font-weight: 600;
-  padding-bottom: 1vh;
+  padding-bottom: 3vh;
   font-family: Montserrat-ExtraBold, sans-serif;
 }
 .text-article{
@@ -177,8 +178,11 @@ head, body{
 }
 .offer-description{
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 14px;
   overflow: hidden;
+  color: #868587;
+  font-family: Inter-Regular, sans-serif;
+  text-align: center;
 }
 .header-dot{
   width: 15px;
