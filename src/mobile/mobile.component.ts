@@ -97,7 +97,7 @@ export class MobileComponent implements OnInit{
   ngOnInit(): void {
     window.onscroll = () => {
       this.scrollTop = window.scrollY;
-      if (this.scrollTop < 844){
+      if (this.scrollTop < 640){
         this.activeSection = 1;
       }
       else if (this.scrollTop < 1625){
