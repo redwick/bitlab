@@ -1,9 +1,6 @@
-@if (d.getDeviceInfo()){
-  @if (d.isDesktop()){
-    <sections class="sections" [components]="components" [naviComponent]="NaviComponent" [routes]="routes" [dotsEnabled]="true"></sections>
-  }
-  @else{
-    <app-mobile></app-mobile>
-  }
-
+@if (d.isMobile()){
+  <app-mobile></app-mobile>
+}
+@else{
+  <sections class="sections" [components]="components" [naviComponent]="NaviComponent" [routes]="routes" [dotsEnabled]="true"></sections>
 }
