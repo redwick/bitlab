@@ -65,8 +65,8 @@ head,body{
 .h100vh{
   height: 100vh;
 }
-.h100lvh{
-  height: 100lvh;
+.h100svh{
+  height: 100svh;
 }
 .text-center{
   text-align: center;
