@@ -62,7 +62,7 @@ export class SectionsComponent implements OnInit, AfterViewInit{
       };
     }
     if (this.routes.length > 0){
-      this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
+      this.router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(event => {
         let e = event as NavigationStart;
         let route = this.routes.find(x => '/' + x == e.url);
         if (route != null){

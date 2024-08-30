@@ -5,6 +5,9 @@ import {PlusMinus} from "../deploy/plus-minus";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {RecaptchaModule} from "ng-recaptcha";
 import {of} from "rxjs";
+import {DesktopComponent} from "../desktop/desktop.component";
+import {DeviceDetectorService} from "ngx-device-detector";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-mobile',
@@ -94,6 +97,11 @@ export class MobileComponent implements OnInit{
 
   protected readonly scroll = scroll;
 
+  constructor(public d: DeviceDetectorService, public r: Router) {
+    if (!this.d.isMobile()){
+      this.r.navigate(['']);
+    }
+  }
   ngOnInit(): void {
     window.onscroll = () => {
       this.scrollTop = window.scrollY;

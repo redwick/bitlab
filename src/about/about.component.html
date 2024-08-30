@@ -61,7 +61,7 @@
           </div>
           <div class="df flex-col mb-20">
             <label for="company" class="subtitle-form">Компания</label>
-            <input id="company" class="input-form" type="email" placeholder="Наименование компании" formControlName="email" required>
+            <input id="company" class="input-form" type="text" placeholder="Наименование компании" formControlName="company">
           </div>
           <div class="df flex-col mb-20">
             <label for="text" class="subtitle-form">Введите сообщение</label>
@@ -71,7 +71,7 @@
             <re-captcha (resolved)="resolved($event)" siteKey="6LedWBsqAAAAABpWo7pmpUpo62jHU5dKxOL0TvuK"></re-captcha>
 <!--            <img src="capcha.png" width="80%">-->
           </div>
-          <div class="button">
+          <div [class.disabled-button]="!captchaResolved && contacts.invalid" class="button" (click)="sendNotify()">
             <div class="cxy">
               Отправить
             </div>
@@ -159,3 +159,6 @@
   <app-contact (closed)="showContact = false"></app-contact>
 </div>
 
+<div class="message-send" *ngIf="showMessageSend">
+  <app-message-send (closed)="showMessageSend = false"></app-message-send>
+</div>

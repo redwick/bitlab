@@ -1,12 +1,9 @@
 import { Routes } from '@angular/router';
-import {AppComponent} from "./app.component";
+import {DesktopComponent} from "../desktop/desktop.component";
+import {MobileComponent} from "../mobile/mobile.component";
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: AppComponent },
-  { path: 'offers', component: AppComponent },
-  { path: 'deploy', component: AppComponent },
-  { path: 'skills', component: AppComponent },
-  { path: 'about', component: AppComponent },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: DesktopComponent },
+  { path: 'm', component: MobileComponent },
+  { path: '**', component: DesktopComponent },
 ];

@@ -6,7 +6,7 @@ import {
   animate,
   transition, keyframes,
 } from '@angular/animations';
-import {NgIf} from "@angular/common";
+import {NgIf, NgStyle} from "@angular/common";
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {GoogleTagManagerService} from "angular-google-tag-manager";
@@ -17,7 +17,8 @@ import {GoogleTagManagerService} from "angular-google-tag-manager";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   imports: [
-    NgIf
+    NgIf,
+    NgStyle
   ],
   animations: [
     trigger('firstRow', [
@@ -116,6 +117,7 @@ import {GoogleTagManagerService} from "angular-google-tag-manager";
 export class HomeComponent implements OnInit{
 
   init = false;
+  show = false;
 
   constructor(private router: Router, private gtmService: GoogleTagManagerService) {
   }
@@ -125,7 +127,9 @@ export class HomeComponent implements OnInit{
       let e = event as NavigationStart;
       this.init = e.url.includes('home') || e.url == '/';
     });
+    this.init = true;
+    setTimeout(() => {
+      this.show = true;
+    },100);
   }
-
-
 }

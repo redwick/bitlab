@@ -8,6 +8,9 @@ import {QRCodeModule} from "angularx-qrcode";
 import {TextLocation} from "./text-location";
 import {ContactComponent} from "./contact/contact.component";
 import {RecaptchaModule} from "ng-recaptcha";
+import {NotifyMessage} from "./notify-message";
+import {HttpClient} from "@angular/common/http";
+import {MessageSendComponent} from "./message-send/message-send.component";
 
 @Component({
   selector: 'app-about',
@@ -20,7 +23,8 @@ import {RecaptchaModule} from "ng-recaptcha";
     QRCodeModule,
     ContactComponent,
     ReactiveFormsModule,
-    RecaptchaModule
+    RecaptchaModule,
+    MessageSendComponent
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
@@ -155,17 +159,19 @@ export class AboutComponent implements OnInit{
   tooltip = new TextLocation();
   qrCode = new TextLocation();
   showContact = false;
+  showMessageSend = false;
   captchaResolved = false;
 
 
   contacts = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$')]),
     text: new FormControl('', [Validators.required]),
+    company: new FormControl(''),
     topic: new FormControl('offer'),
   });
 
-  constructor(public router: Router) {
+  constructor(public router: Router, public http: HttpClient) {
   }
   ngOnInit(): void {
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
@@ -197,5 +203,16 @@ export class AboutComponent implements OnInit{
 
   resolved(event: string | null) {
     this.captchaResolved = true;
+  }
+
+  sendNotify() {
+    let notify = new NotifyMessage();
+    notify.name = this.contacts.get('name')!.value!;
+    notify.company = this.contacts.get('company')!.value!;
+    notify.email = this.contacts.get('email')!.value!;
+    notify.text = this.contacts.get('text')!.value!;
+    this.http.post<string>('https://it-bitlab.ru/rest/mail', notify).subscribe(() => {
+      this.showMessageSend = true;
+    });
   }
 }

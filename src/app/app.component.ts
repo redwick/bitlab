@@ -20,9 +20,6 @@ import {filter} from "rxjs";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  components = [HomeComponent, OffersComponent, SkillsComponent, DeployComponent, AboutComponent];
-  routes = ['home', 'offers', 'skills', 'deploy', 'about'];
-  protected readonly NaviComponent = NaviComponent;
   constructor(public d: DeviceDetectorService, private router: Router, private gtmService: GoogleTagManagerService) {
     this.router.events.pipe(filter(x => x instanceof NavigationStart)).subscribe((event) => {
       let e = event as NavigationStart;
@@ -32,5 +29,8 @@ export class AppComponent {
       };
       this.gtmService.pushTag(gtmTag);
     });
+    if (this.d.isMobile()){
+      this.router.navigate(['m']);
+    }
   }
 }

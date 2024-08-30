@@ -2,7 +2,7 @@
   <div class="logo">
     <img class="logo-image" src="/logo.png">
   </div>
-  <div class="text-first-row" [@firstRow] *ngIf="init"><span class="text-highlight">IT</span> решения</div>
-  <div class="text-second-row" [@secondRow] *ngIf="init"><span class="text-highlight">для</span> вашего</div>
-  <div class="text-third-row" [@thirdRow] *ngIf="init"><span class="text-highlight">бизнеса</span></div>
+  <div [class.text-rows]="!show" class="text-first-row" [@firstRow] *ngIf="init"><span class="text-highlight">IT</span> решения</div>
+  <div [class.text-rows]="!show" class="text-second-row" [@secondRow] *ngIf="init"><span class="text-highlight">для</span> вашего</div>
+  <div [class.text-rows]="!show" class="text-third-row" [@thirdRow] *ngIf="init"><span class="text-highlight">бизнеса</span></div>
 </div>
