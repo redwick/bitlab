@@ -1,0 +1,20 @@
+.toast-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px 6px 12px;
+}
+.send-ok{
+  font-family: Inter-Regular, sans-serif;
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 600;
+}
+.line{
+  border-bottom: 1px solid #16a34a40;
+}
+.toast-body{
+  padding: 6px 12px;
+  color: #16a34a;
+  font-family: Inter-Regular, sans-serif;
+  font-size: 13px;
+}

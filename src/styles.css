@@ -36,6 +36,9 @@ head,body{
 .mb-20{
   margin-bottom: 20px;
 }
+.mr-5{
+  margin-right: 5px;
+}
 .mr-10{
   margin-right: 10px;
 }
@@ -96,4 +99,7 @@ head,body{
 }
 .p-ml-auto{
   margin-left: auto!important;
+}
+.cursor-pointer{
+  cursor: pointer;
 }

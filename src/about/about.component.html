@@ -69,7 +69,6 @@
           </div>
           <div class="df flex-col mb-20">
             <re-captcha (resolved)="resolved($event)" siteKey="6LedWBsqAAAAABpWo7pmpUpo62jHU5dKxOL0TvuK"></re-captcha>
-<!--            <img src="capcha.png" width="80%">-->
           </div>
           <div [class.disabled-button]="!captchaResolved && contacts.invalid" class="button" (click)="sendNotify()">
             <div class="cxy">
@@ -78,77 +77,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-<!--      <div class="text-descr" [@right]="init ? 'init' : 'closed'">-->
-<!--        <div class="text-article">-->
-<!--          <div class="text-line">Вы можете связаться с нами одним из удобных для вас способов</div>-->
-<!--          <div class="text-line">-->
-<!--            <div class="df text-line">-->
-<!--              <a class="cxy" #whatsappUrl [href]="'https://wa.me/' + whatsapp" target="_blank">-->
-<!--                <img class="contact-img" src="/whatsapp.png">-->
-<!--              </a>-->
-<!--              <div (click)="whatsappUrl.click()" class="contact-line cy">WhatsApp</div>-->
-<!--              <div class="cy ml-1">-->
-<!--                <div class="button-image cxy">-->
-<!--                  <img (click)="whatsappUrl.click()" class="button-img" src="/url.png">-->
-<!--                </div>-->
-<!--                <div class="button-image cxy" (mouseleave)="qrCode.text = ''">-->
-<!--                  <img (click)="showTextLocation(qrCode, $event.clientX, $event.clientY, 'https://wa.me/' + whatsapp, false)" class="button-img" src="/qr.png">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="df text-line">-->
-<!--              <a class="cxy" #telegramUrl [href]="'https://t.me/' + telegram" target="_blank">-->
-<!--                <img class="contact-img" src="/telegram.png">-->
-<!--              </a>-->
-<!--              <div (click)="telegramUrl.click()" class="contact-line cy">Telegram</div>-->
-<!--              <div class="cy ml-1">-->
-<!--                <div class="button-image cxy">-->
-<!--                  <img (click)="telegramUrl.click()" class="button-img" src="/url.png">-->
-<!--                </div>-->
-<!--                <div class="button-image cxy" (mouseleave)="qrCode.text = ''">-->
-<!--                  <img (click)="showTextLocation(qrCode, $event.clientX, $event.clientY, 'https://t.me/' + telegram, false)" class="qr-img" src="/qr.png">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="df text-line">-->
-<!--              <a class="cxy" #emailUrl [href]="'mailto:' + email" target="_blank">-->
-<!--                <img class="contact-img" src="/email.png">-->
-<!--              </a>-->
-<!--              <div (click)="emailUrl.click()" class="contact-line cy">{{email}}</div>-->
-<!--              <div class="cy ml-1">-->
-<!--                <div class="button-image cxy">-->
-<!--                  <img (click)="emailUrl.click()" class="button-img" src="/url.png">-->
-<!--                </div>-->
-<!--                <div class="button-image cxy">-->
-<!--                  <img (click)="copyEmail($event)" class="button-img" src="/copy.png">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="df text-line">-->
-<!--              <div class="cxy">-->
-<!--                <img class="contact-img" src="/contact.png">-->
-<!--              </div>-->
-<!--              <div (click)="showContact = true" class="contact-line cy">Форма обратной связи</div>-->
-<!--              <div class="cy ml-1">-->
-<!--                <div class="button-image cxy">-->
-<!--                  <img (click)="showContact = true" class="button-img" src="/url.png">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="text-line">ООО "Битлаб" <a href="https://it-bitlab.ru" target="_blank">it-bitlab.ru</a></div>-->
-<!--      </div>-->
-
-
-
-
-
     </div>
   </div>
 </div>

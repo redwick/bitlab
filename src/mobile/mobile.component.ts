@@ -8,6 +8,9 @@ import {of} from "rxjs";
 import {DesktopComponent} from "../desktop/desktop.component";
 import {DeviceDetectorService} from "ngx-device-detector";
 import {Router} from "@angular/router";
+import {NotifyMessage} from "../about/notify-message";
+import {HttpClient} from "@angular/common/http";
+import {MessageSendComponent} from "../about/message-send/message-send.component";
 
 @Component({
   selector: 'app-mobile',
@@ -18,7 +21,8 @@ import {Router} from "@angular/router";
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule,
-    NgStyle
+    NgStyle,
+    MessageSendComponent
   ],
   templateUrl: './mobile.component.html',
   styleUrl: './mobile.component.css'
@@ -81,6 +85,7 @@ export class MobileComponent implements OnInit{
   telegram = 'spiridovich_p';
   contacts = new FormGroup({
     name: new FormControl('', [Validators.required]),
+    company: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     text: new FormControl('', [Validators.required]),
     topic: new FormControl('offer'),
@@ -94,10 +99,11 @@ export class MobileComponent implements OnInit{
   sections = [1, 2, 3, 4, 5];
   activeSection = 1;
   scrollTop = 0;
+  showMessageSend = false;
 
   protected readonly scroll = scroll;
 
-  constructor(public d: DeviceDetectorService, public r: Router) {
+  constructor(public d: DeviceDetectorService, public r: Router, public http: HttpClient) {
     if (!this.d.isMobile()){
       this.r.navigate(['']);
     }
@@ -195,5 +201,16 @@ export class MobileComponent implements OnInit{
 
   scrollToTop(event: MouseEvent) {
     window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  sendNotify() {
+    let notify = new NotifyMessage();
+    notify.name = this.contacts.get('name')!.value!;
+    notify.company = this.contacts.get('company')!.value!;
+    notify.email = this.contacts.get('email')!.value!;
+    notify.text = this.contacts.get('text')!.value!;
+    this.http.post<string>('https://it-bitlab.ru/rest/mail', notify).subscribe(() => {
+      this.showMessageSend = true;
+    });
   }
 }

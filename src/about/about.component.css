@@ -147,13 +147,14 @@ ul{
 }
 .message-send{
   position: fixed;
-  top: 50%;
+  bottom: 2vh;
   left: 50%;
-  height: 40vh;
-  width: 60vh;
+  height: 80px;
+  width: 380px;
   transform: translate(-50%, -50%);
-  background-color: white;
   z-index: 200;
+  border-radius: 10px;
+  background-color: #F1FDF5;
 }
 .subtitle{
   color: #868587;
