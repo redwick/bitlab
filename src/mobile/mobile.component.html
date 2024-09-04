@@ -196,7 +196,7 @@
         <re-captcha (resolved)="resolved($event)" siteKey="6LedWBsqAAAAABpWo7pmpUpo62jHU5dKxOL0TvuK"></re-captcha>
         <!--            <img src="capcha.png" width="80%">-->
       </div>
-      <div [class.disabled-button]="!captchaResolved && contacts.invalid" class="button" (click)="sendNotify()">
+      <div [class.disabled-button]="!captchaResolved || contacts.invalid" class="button" (click)="sendNotify()">
         <div class="cxy">
           Отправить
         </div>
