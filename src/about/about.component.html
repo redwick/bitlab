@@ -70,7 +70,7 @@
           <div class="df flex-col mb-20">
             <re-captcha (resolved)="resolved($event)" siteKey="6LedWBsqAAAAABpWo7pmpUpo62jHU5dKxOL0TvuK"></re-captcha>
           </div>
-          <div [class.disabled-button]="!captchaResolved || contacts.invalid" class="button" (click)="sendNotify()">
+          <div [class.disabled-button]="contacts.invalid" class="button" (click)="sendNotify()">
             <div class="cxy">
               Отправить
             </div>

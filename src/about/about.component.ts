@@ -212,6 +212,7 @@ export class AboutComponent implements OnInit{
     notify.email = this.contacts.get('email')!.value!;
     notify.text = this.contacts.get('text')!.value!;
     this.http.post<string>('https://it-bitlab.ru/rest/mail', notify).subscribe(() => {
+      this.contacts.reset();
       this.showMessageSend = true;
     });
   }
