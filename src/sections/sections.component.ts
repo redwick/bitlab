@@ -73,6 +73,13 @@ export class SectionsComponent implements OnInit, AfterViewInit{
         }
       });
     }
+    let route = this.routes.find(x => '/' + x == this.router.url);
+    if (route != null){
+      this.scrolledSection = this.routes.indexOf(route);
+      setTimeout(()  => {
+        this.scrollToComponent();
+      });
+    }
   }
   scrollToComponent(){
     if (typeof window !== "undefined") {

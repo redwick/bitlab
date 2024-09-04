@@ -1,4 +1,4 @@
 <div class="navi df">
-  <div *ngFor="let nav of navMenu" class="nav-menu cxy mx-20" [routerLink]="nav.route" routerLinkActive="navi-active">{{nav.header}}</div>
+  <div *ngFor="let nav of navMenu" class="nav-menu cxy mx-20" (click)="routeTo(nav.route)" [class.navi-active]="nav.route == router.url" >{{nav.header}}</div>
 </div>
 

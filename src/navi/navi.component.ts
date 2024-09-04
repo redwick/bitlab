@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {NavMenu} from "./nav-menu";
 import {NgForOf} from "@angular/common";
 
@@ -22,4 +22,11 @@ export class NaviComponent {
     new NavMenu('/deploy', 'Реализация'),
     new NavMenu('/about', 'Контакты'),
   ];
+  constructor(public router: Router) {
+  }
+
+  routeTo(route: string) {
+    console.log(route);
+    this.router.navigate([route]);
+  }
 }
