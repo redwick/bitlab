@@ -85,7 +85,7 @@ export class MobileComponent implements OnInit{
   telegram = 'spiridovich_p';
   contacts = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    company: new FormControl('', [Validators.required]),
+    company: new FormControl('', []),
     email: new FormControl('', [Validators.required, Validators.email]),
     text: new FormControl('', [Validators.required]),
     topic: new FormControl('offer'),
