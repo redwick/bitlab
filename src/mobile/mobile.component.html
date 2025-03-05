@@ -157,8 +157,9 @@
       <div class="w-100 df">
         <div class="cx flex-col">
           <div class="min-text">Phone</div>
-          <a class="cxy" #whatsappUrl [href]="'https://wa.me/' + whatsapp" target="_blank"></a>
-          <div (click)="whatsappUrl.click()" class="contact-line cy">+7 999 212-72-38</div>
+          <a class="cxy" [href]="'tel:' + whatsapp">
+            <div class="contact-line cy">+7 999 212-72-38</div>
+          </a>
         </div>
       </div>
     </div>
