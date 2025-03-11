@@ -153,8 +153,8 @@ import {MessageSendComponent} from "./message-send/message-send.component";
 export class AboutComponent implements OnInit{
   init = false;
   email = 'mail@it-bitlab.ru';
-  whatsapp = '+79992127238';
-  telegram = 'spiridovich_p';
+  whatsapp = '+79216118165';
+  telegram = 'redwick';
 
   tooltip = new TextLocation();
   qrCode = new TextLocation();

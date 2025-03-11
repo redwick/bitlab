@@ -81,8 +81,8 @@ export class MobileComponent implements OnInit{
     'масштабирование требует приобретения дополнительных серверов',
   ]);
   email = 'mail@it-bitlab.ru';
-  whatsapp = '+79992127238';
-  telegram = 'spiridovich_p';
+  whatsapp = '+79216118165';
+  telegram = 'redwick';
   contacts = new FormGroup({
     name: new FormControl('', [Validators.required]),
     company: new FormControl('', []),
