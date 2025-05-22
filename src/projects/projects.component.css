@@ -1,0 +1,132 @@
+.section{
+  height: 100%;
+  color: var(--main-color);
+  position: relative;
+  padding-right: 3%;
+  /*background-color: var(--second-color);*/
+  /*background: rgb(253,8,68);*/
+  /*background: var(--second-color);*/
+  background: linear-gradient(225deg, rgba(253,8,68,1) 0%, rgba(0,0,0,1) 15%);
+}
+.section-mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+}
+.text-middle{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vh;
+  color: var(--main-active-color);
+}
+.text-header{
+  color: var(--main-color);
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 2%;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-weight: 900;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 4vh;
+  gap: 4vh;
+  row-gap: 4vh;
+  z-index: 22;
+}
+.project-header{
+  color: var(--main-color);
+  font-size: 2.2vh;
+  text-align: center;
+  padding-top: 2vh;
+  font-weight: 600;
+  font-family: Montserrat-ExtraBold, sans-serif;
+}
+.project-subtitle{
+  color: #868587;
+  font-size: 1.3vh;
+  text-align: center;
+  padding-top: 1vh;
+  font-family: Inter-Regular, sans-serif;
+}
+.subtitle-back{
+  color: #868587;
+  font-size: 13px;
+  padding-top: 4vh;
+  font-family: Inter-Regular, sans-serif;
+}
+.project-header-and-image{
+  padding: 4vh 3vh 3vh;
+}
+.project-image-img{
+  height: 12vh;
+}
+.project-descr{
+  font-size: 1.8vh;
+}
+.project-descr-line{
+  padding-top: 1vh;
+}
+.projects-header{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 22;
+}
+.text-article{
+  background-color: #ffffff0f;
+  border-radius: 2vh;
+  padding: 1vh;
+}
+
+.projects {
+  perspective: 100vh;
+}
+.project{
+  width: 14vw;
+  height: 32vh;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  cursor: pointer;
+  &.front {
+    transform: rotateY(0deg);
+  }
+  &.back {
+    transform: rotateY(-180deg);
+  }
+}
+.button-rotate{
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-active-color);
+  color: white;
+  border-radius: 1vh;
+  padding: 12px 20px;
+  font-family: Inter-Regular, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+.rotate-img{
+  height: 2.5vh;
+  padding-left: 1vh;
+}
+.rotate{
+  position: absolute;
+  left: 50%;
+  bottom: 2vh;
+  transform: translateX(-50%);
+}

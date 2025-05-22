@@ -6,6 +6,7 @@ import {OffersComponent} from "../offers/offers.component";
 import {SkillsComponent} from "../skills/skills.component";
 import {DeployComponent} from "../deploy/deploy.component";
 import {AboutComponent} from "../about/about.component";
+import {ProjectsComponent} from "../projects/projects.component";
 
 @Component({
   selector: 'app-desktop',
@@ -17,7 +18,7 @@ import {AboutComponent} from "../about/about.component";
   styleUrl: './desktop.component.css'
 })
 export class DesktopComponent {
-    components = [HomeComponent, OffersComponent, SkillsComponent, DeployComponent, AboutComponent];
-    routes = ['home', 'offers', 'skills', 'deploy', 'about'];
+    components = [HomeComponent, OffersComponent, SkillsComponent, DeployComponent, ProjectsComponent, AboutComponent];
+    routes = ['home', 'offers', 'skills', 'deploy', 'projects', 'about'];
     protected readonly NaviComponent = NaviComponent;
 }

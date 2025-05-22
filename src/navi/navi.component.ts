@@ -20,6 +20,7 @@ export class NaviComponent {
     new NavMenu('/offers', 'Предложения'),
     new NavMenu('/skills', 'Технологии'),
     new NavMenu('/deploy', 'Реализация'),
+    new NavMenu('/projects', 'Проекты'),
     new NavMenu('/about', 'Контакты'),
   ];
   constructor(public router: Router) {
