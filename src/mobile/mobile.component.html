@@ -143,7 +143,7 @@
     <div class="offer-box" *ngFor="let project of projects; let i = index" (click)="toggleProject(i)">
       <div class="df">
         <div class="cxy">
-          <video #video (click)="video.requestFullscreen(); $event.stopPropagation()" class="project-video" [src]="project.video_thumb" autoplay muted loop>
+          <video #video (click)="video.requestFullscreen(); $event.stopPropagation()" class="project-video" [src]="project.video_thumb" autoplay muted loop playsinline>
           </video>
         </div>
         <div>

@@ -8,36 +8,77 @@
            [@right-left]="init && (i > 3) ? 'init' : 'closed'"
       >
         <div class="side front">
-          <div class="project-header-and-image">
-            <div class="cxy">
-              <video (click)="openVideo(project); $event.stopPropagation()" class="project-image-img" [src]="project.video_thumb" autoplay loop muted></video>
+          @if (project.additional){
+            <div class="df additional">
+              <div (click)="additional = false; $event.stopPropagation()" class="tab" [class.active]="!additional">ERP</div>
+              <div (click)="additional = true; $event.stopPropagation()" class="tab" [class.active]="additional">CRM</div>
             </div>
-            <div class="project-header cx">{{project.title}}</div>
-            <div class="project-subtitle cx">{{project.subtitle}}</div>
-          </div>
-          <div class="rotate">
-            <div class="button-rotate">
+          }
+          @if (additional && project.additional){
+            <div class="project-header-and-image">
               <div class="cxy">
-                Подробнее
+                <video (click)="openVideo(project.additional!); $event.stopPropagation()" class="project-image-img" [src]="project.additional.video_thumb" autoplay loop muted></video>
+              </div>
+              <div class="project-header cx">{{project.additional.title}}</div>
+              <div class="project-subtitle cx">{{project.additional.subtitle}}</div>
+            </div>
+            <div class="rotate">
+              <div class="button-rotate">
+                <div class="cxy">
+                  Подробнее
+                </div>
               </div>
             </div>
+          } @else {
+            <div class="project-header-and-image">
+              <div class="cxy">
+                <video (click)="openVideo(project); $event.stopPropagation()" class="project-image-img" [src]="project.video_thumb" autoplay loop muted></video>
+              </div>
+              <div class="project-header cx">{{project.title}}</div>
+              <div class="project-subtitle cx">{{project.subtitle}}</div>
+            </div>
+            <div class="rotate">
+              <div class="button-rotate">
+                <div class="cxy">
+                  Подробнее
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        @if (additional && project.additional){
+          <div class="side back">
+            <div class="project-header cx">{{project.additional.title}}</div>
+            <div class="project-subtitle">Описание:</div>
+            <ul class="project-descr">
+              @for (s of project.additional.description; track $index) {
+                <li class="project-descr-line subtitle-back">{{s}}</li>
+              }
+            </ul>
+            <div class="project-subtitle">Технологии:</div>
+            <ul class="project-descr">
+              @for (s of project.additional.technologies; track $index) {
+                <li class="project-descr-line subtitle-back">{{s}}</li>
+              }
+            </ul>
           </div>
-        </div>
-        <div class="side back">
-          <div class="project-header cx">{{project.title}}</div>
-          <div class="project-subtitle">Описание:</div>
-          <ul class="project-descr">
-            @for (s of project.description; track $index) {
-              <li class="project-descr-line subtitle-back">{{s}}</li>
-            }
-          </ul>
-          <div class="project-subtitle">Технологии:</div>
-          <ul class="project-descr">
-            @for (s of project.technologies; track $index) {
-              <li class="project-descr-line subtitle-back">{{s}}</li>
-            }
-          </ul>
-        </div>
+        } @else {
+          <div class="side back">
+            <div class="project-header cx">{{project.title}}</div>
+            <div class="project-subtitle">Описание:</div>
+            <ul class="project-descr">
+              @for (s of project.description; track $index) {
+                <li class="project-descr-line subtitle-back">{{s}}</li>
+              }
+            </ul>
+            <div class="project-subtitle">Технологии:</div>
+            <ul class="project-descr">
+              @for (s of project.technologies; track $index) {
+                <li class="project-descr-line subtitle-back">{{s}}</li>
+              }
+            </ul>
+          </div>
+        }
       </div>
     </div>
   </div>

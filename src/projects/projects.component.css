@@ -152,3 +152,17 @@
     }
   }
 }
+.additional{
+  position: absolute;
+  left: 50%;
+  top: 0.8vh;
+  transform: translate(-50%, 0);
+  .tab{
+    margin: 5px;
+    width: 3vw;
+    text-align: center;
+    &.active{
+      border-bottom: 2px solid white;
+    }
+  }
+}

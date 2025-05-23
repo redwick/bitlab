@@ -181,6 +181,15 @@ export class MobileComponent implements OnInit{
   }
   ngOnInit(): void {
     window.onscroll = () => {
+      const videos: NodeListOf<HTMLVideoElement> = document.querySelectorAll('video');
+      videos.forEach(video => {
+        if (video.paused){
+          video.muted = true;
+          video.play().catch(err => {
+            console.warn('Не удалось воспроизвести видео:', err);
+          });
+        }
+      });
       this.scrollTop = window.scrollY;
       if (this.scrollTop < 640){
         this.activeSection = 1;

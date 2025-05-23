@@ -254,6 +254,7 @@ export class ProjectsComponent implements OnInit {
 
   flipped: Project[] = [];
   video: Project | undefined;
+  additional = false;
 
   projects = [
     new Project(
@@ -262,15 +263,15 @@ export class ProjectsComponent implements OnInit {
       'DeepSea ERP',
       'Автоматизированная система управления бизнес процессами компании',
       ['Angular/TypeScript/HTML/CSS', 'ThreeJS/WebGL', 'Scala/Java', 'PostgreSQL/OracleDB', 'Docker/Kubernetes'],
-      ['Информационная система', 'Рабочее место сотрудника', 'Обмен данными с внешними системами']
-    ),
-    new Project(
-      'https://s3.regru.cloud/bitlab/deepsea_2.mp4',
-      'https://s3.regru.cloud/bitlab/deepsea_2_thumb.mp4',
-      'DeepSea CRM',
-      'Система планирования и учёта времени работы сотрудников',
-      ['Angular/TypeScript/HTML/CSS', 'BPMN', 'Scala/Java', 'PostgreSQL/MongoDB', 'Nginx/Docker/Kubernetes'],
-      ['Рабочее место сотрудника', 'Ведение задач и проектов', 'Обсуждение вопросов и обмен информацией', 'Планирование и учёт времени работы сотрудников', 'Статистика и аналитика по проектам и сотрудникам']
+      ['Информационная система', 'Рабочее место сотрудника', 'Обмен данными с внешними системами'],
+      new Project(
+        'https://s3.regru.cloud/bitlab/deepsea_2.mp4',
+        'https://s3.regru.cloud/bitlab/deepsea_2_thumb.mp4',
+        'DeepSea CRM',
+        'Система планирования и учёта времени работы сотрудников',
+        ['Angular/TypeScript/HTML/CSS', 'BPMN', 'Scala/Java', 'PostgreSQL/MongoDB', 'Nginx/Docker/Kubernetes'],
+        ['Рабочее место сотрудника', 'Ведение задач и проектов', 'Обсуждение вопросов и обмен информацией', 'Планирование и учёт времени работы сотрудников', 'Статистика и аналитика по проектам и сотрудникам']
+      )
     ),
     new Project(
       'https://s3.regru.cloud/bitlab/webgpu.mp4',
@@ -285,8 +286,16 @@ export class ProjectsComponent implements OnInit {
       'https://s3.regru.cloud/bitlab/nautic_thumb.mp4',
       'NauticRus',
       'Официальный сайт компании NauticRus',
-      ['Angular/TypeScript/HTML/CSS', 'NestJS', 'MongoDB', 'Nginx/Docker'],
-      ['Официальный сайт компании', 'Отправка откликов на вакансии', 'Email рассылка']
+      ['AngularSSR/TypeScript/HTML/CSS', 'NestJS', 'MongoDB', 'Nginx/Docker'],
+      ['Официальный сайт компании', 'Отправка откликов на вакансии', 'Email рассылка', 'Мобильная версия']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/fest.mp4',
+      'https://s3.regru.cloud/bitlab/fest_thumb.mp4',
+      'NauticFest',
+      'Платформа для проведения спортивных мероприятий',
+      ['AngularSSR/TypeScript/HTML/CSS', 'Scala/Java', 'PostgreSQL', 'Nginx/Docker'],
+      ['Мобильная версия', 'Ведение протоколов соревнований', 'Учёт команд и участников', 'Планирование встреч', 'Расчёт результатов соревнований', 'Бронирование услуг мероприятия', 'Информационное табло результатов для больших экранов']
     ),
     new Project(
       'https://s3.regru.cloud/bitlab/eurasian.mp4',

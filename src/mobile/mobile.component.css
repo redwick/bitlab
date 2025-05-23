@@ -227,14 +227,14 @@ head, body{
   margin: 0;
   color: white;
   padding-left: 2vw;
-  padding-right: 1vw;
+  padding-right: 2vw;
 }
 .project-descr-line{
   padding-top: 0.7vh;
 }
 .subtitle-back{
   color: #868587;
-  font-size: clamp(9px, 0.5vh, 13px);
+  font-size: clamp(12px, 0.5vh, 13px);
   font-family: Inter-Regular, sans-serif;
 }
 .project-subtitle{
@@ -243,6 +243,8 @@ head, body{
   text-align: center;
   padding-top: 1vh;
   font-family: Inter-Regular, sans-serif;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 .project-header{
   color: var(--main-color);
@@ -251,11 +253,4 @@ head, body{
   padding-top: 0.5vh;
   font-weight: 600;
   font-family: Montserrat-ExtraBold, sans-serif;
-}
-.project-subtitle{
-  color: #868587;
-  font-size: 1.3vh;
-  text-align: center;
-  padding: 1vh;
-  font-family: Inter-Regular, sans-serif;
 }
