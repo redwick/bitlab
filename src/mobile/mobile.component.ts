@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 import {NotifyMessage} from "../about/notify-message";
 import {HttpClient} from "@angular/common/http";
 import {MessageSendComponent} from "../about/message-send/message-send.component";
+import {Project} from "../projects/project";
 
 @Component({
   selector: 'app-mobile',
@@ -80,6 +81,75 @@ export class MobileComponent implements OnInit{
     'приобретение и сборка серверов требует значительных средств',
     'масштабирование требует приобретения дополнительных серверов',
   ]);
+
+  projects = [
+    new Project(
+      'https://s3.regru.cloud/bitlab/deepsea_1.mp4',
+      'https://s3.regru.cloud/bitlab/deepsea_1_thumb.mp4',
+      'DeepSea ERP',
+      'Автоматизированная система управления бизнес процессами компании',
+      ['Angular/TypeScript/HTML/CSS', 'ThreeJS/WebGL', 'Scala/Java', 'PostgreSQL/OracleDB', 'Docker/Kubernetes'],
+      ['Информационная система', 'Рабочее место сотрудника', 'Обмен данными с внешними системами']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/deepsea_2.mp4',
+      'https://s3.regru.cloud/bitlab/deepsea_2_thumb.mp4',
+      'DeepSea CRM',
+      'Система планирования и учёта времени работы сотрудников',
+      ['Angular/TypeScript/HTML/CSS', 'BPMN', 'Scala/Java', 'PostgreSQL/MongoDB', 'Nginx/Docker/Kubernetes'],
+      ['Рабочее место сотрудника', 'Ведение задач и проектов', 'Обсуждение вопросов и обмен информацией', 'Планирование и учёт времени работы сотрудников', 'Статистика и аналитика по проектам и сотрудникам']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/webgpu.mp4',
+      'https://s3.regru.cloud/bitlab/webgpu_thumb.mp4',
+      'Web3D Viewer',
+      'Браузерный сервис для визуализации объёмных 3D моделей',
+      ['Angular/TypeScript/HTML/CSS', 'BPMN', 'Scala/Java', 'PostgreSQL/MongoDB', 'Nginx/Docker/Kubernetes'],
+      ['Рабочее место сотрудника', 'Ведение задач и проектов', 'Обсуждение вопросов и обмен информацией', 'Планирование и учёт времени работы сотрудников', 'Статистика и аналитика по проектам и сотрудникам']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/nautic.mp4',
+      'https://s3.regru.cloud/bitlab/nautic_thumb.mp4',
+      'NauticRus',
+      'Официальный сайт компании NauticRus',
+      ['Angular/TypeScript/HTML/CSS', 'NestJS', 'MongoDB', 'Nginx/Docker'],
+      ['Официальный сайт компании', 'Отправка откликов на вакансии', 'Email рассылка']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/eurasian.mp4',
+      'https://s3.regru.cloud/bitlab/eurasian_thumb.mp4',
+      'The Eurasian',
+      'Официальный сайт журнала The Eurasian',
+      ['Angular/TypeScript/HTML/CSS', 'Ionic', 'Java/Scala', 'MongoDB', 'Nginx/Docker'],
+      ['Официальный сайт компании', 'Email подписка и рассылка', 'Мобильное приложение для Adnroid и iOS']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/spysee.mp4',
+      'https://s3.regru.cloud/bitlab/spysee_thumb.mp4',
+      'SpySee',
+      'Программный продукт для мониторинга и контроля активности сотрудников',
+      ['Electron/Angular/TypeScript/HTML/CSS', '.NET Core C#'],
+      ['Мониторинг активности сотрудников', 'Просмотр экранов сотрудников в реальном времени', 'Учёт времени работы и бездействия сотрудников', 'Создание отчётов по работе сотрудников']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/charts.mp4',
+      'https://s3.regru.cloud/bitlab/charts_thumb.mp4',
+      'MinCharts',
+      'Демо проект цифровизации расчёта судовых заказов минпромторга',
+      ['Angular/TypeScript/HTML/CSS', 'Nginx'],
+      []
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/eurasian24.mp4',
+      'https://s3.regru.cloud/bitlab/eurasian24_thumb.mp4',
+      'Eurasian24',
+      'Официальный сайт СМИ «Евразия 24»',
+      ['Angular/TypeScript/HTML/CSS', 'Ionic', 'Java/Scala', 'MongoDB', 'Nginx/Docker/AWS S3'],
+      ['Официальный сайт компании', 'Email подписка и рассылка', 'Мобильное приложение для Adnroid и iOS', 'Кастомный видео плеер', 'Потоковая трансляция видео']
+    )
+  ];
+
+
   email = 'mail@it-bitlab.ru';
   whatsapp = '+79216118165';
   telegram = 'redwick';
@@ -96,7 +166,8 @@ export class MobileComponent implements OnInit{
   }
   side = 0;
   expandedOffers: number[] = [];
-  sections = [1, 2, 3, 4, 5];
+  expandedProjects: number[] = [];
+  sections = [1, 2, 3, 4, 5, 6];
   activeSection = 1;
   scrollTop = 0;
   showMessageSend = false;
@@ -123,8 +194,11 @@ export class MobileComponent implements OnInit{
       else if (this.scrollTop < 3415){
         this.activeSection = 4;
       }
-      else{
+      else if (this.scrollTop < 4150){
         this.activeSection = 5;
+      }
+      else{
+        this.activeSection = 6;
       }
     };
   }
@@ -166,8 +240,39 @@ export class MobileComponent implements OnInit{
       };
     }
   }
+  getProjectDescriptionStyle(i: number) {
+    if (this.projectExpanded(i)){
+      return {
+        'max-height': '500px',
+        transition: '1s',
+        overflow: 'hidden'
+      };
+    }
+    else{
+      return {
+        'max-height': 0,
+        opacity: 0,
+        transition: '0.5s',
+        overflow: 'hidden'
+      };
+    }
+  }
+
   getOfferImgStyle(i: number) {
     if (this.offerExpanded(i)){
+      return {
+        transition: '0.5s',
+      };
+    }
+    else{
+      return {
+        transition: '0.5s',
+        transform: 'rotate(-90deg)'
+      };
+    }
+  }
+  getProjectImgStyle(i: number) {
+    if (this.projectExpanded(i)){
       return {
         transition: '0.5s',
       };
@@ -187,6 +292,18 @@ export class MobileComponent implements OnInit{
     else{
       this.expandedOffers.push(i);
     }
+  }
+  toggleProject(i: number) {
+    console.log(i);
+    if (this.expandedProjects.includes(i)){
+      this.expandedProjects.splice(this.expandedProjects.indexOf(i), 1);
+    }
+    else{
+      this.expandedProjects.push(i);
+    }
+  }
+  projectExpanded(i: number) {
+    return this.expandedProjects.includes(i);
   }
 
   offerExpanded(i: number) {

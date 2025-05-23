@@ -6,7 +6,7 @@
   justify-content: flex-end;
   z-index: 100;
   font-family: Roboto, sans-serif;
-  font-size: 18px;
+  font-size: clamp(14px, 1.8vh, 18px);
   font-weight: 500;
 }
 .navi-active{

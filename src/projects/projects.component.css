@@ -57,7 +57,7 @@
 }
 .subtitle-back{
   color: #868587;
-  font-size: 13px;
+  font-size: clamp(9px, 0.5vh, 13px);
   padding-top: 4vh;
   font-family: Inter-Regular, sans-serif;
 }
@@ -69,9 +69,13 @@
 }
 .project-descr{
   font-size: 1.8vh;
+  margin: 0;
+  color: white;
+  padding-left: 2vw;
+  padding-right: 1vw;
 }
 .project-descr-line{
-  padding-top: 1vh;
+  padding-top: 0.7vh;
 }
 .projects-header{
   display: flex;
@@ -129,4 +133,22 @@
   left: 50%;
   bottom: 2vh;
   transform: translateX(-50%);
+}
+.video-overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .video-player{
+    width: 60vw;
+    video{
+      width: 100%;
+    }
+  }
 }

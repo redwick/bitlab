@@ -4,17 +4,13 @@
   <div class="projects-header">
     <div class="projects">
       <div (click)="toggleFlip(project)" [@flipState]="getFlipState(project)" class="project text-article" *ngFor="let project of projects; let i = index"
-           [@left-top]="init && (i == 0) ? 'init' : 'closed'"
-           [@right-top]="init && (i == 2) ? 'init' : 'closed'"
-           [@left-bottom]="init && (i == 3) ? 'init' : 'closed'"
-           [@right-bottom]="init && (i == 5) ? 'init' : 'closed'"
-           [@top]="init && (i == 1) ? 'init' : 'closed'"
-           [@bottom]="init && (i == 4) ? 'init' : 'closed'"
+           [@left-right]="init && (i < 4) ? 'init' : 'closed'"
+           [@right-left]="init && (i > 3) ? 'init' : 'closed'"
       >
         <div class="side front">
           <div class="project-header-and-image">
             <div class="cxy">
-              <video class="project-image-img" [src]="project.video_thumb" autoplay loop muted></video>
+              <video (click)="openVideo(project); $event.stopPropagation()" class="project-image-img" [src]="project.video_thumb" autoplay loop muted></video>
             </div>
             <div class="project-header cx">{{project.title}}</div>
             <div class="project-subtitle cx">{{project.subtitle}}</div>
@@ -28,14 +24,29 @@
           </div>
         </div>
         <div class="side back">
-          <div class="project-header pb-20 cx">{{project.title}}</div>
-          <div class="project-descr padding-20">
-            <div *ngFor="let s of project.description">
-              <div class="project-descr-line subtitle-back">{{s}}</div>
-            </div>
-          </div>
+          <div class="project-header cx">{{project.title}}</div>
+          <div class="project-subtitle">Описание:</div>
+          <ul class="project-descr">
+            @for (s of project.description; track $index) {
+              <li class="project-descr-line subtitle-back">{{s}}</li>
+            }
+          </ul>
+          <div class="project-subtitle">Технологии:</div>
+          <ul class="project-descr">
+            @for (s of project.technologies; track $index) {
+              <li class="project-descr-line subtitle-back">{{s}}</li>
+            }
+          </ul>
         </div>
       </div>
     </div>
   </div>
+  @if (video){
+    <div class="video-overlay" (click)="closeVideo()">
+      <div class="video-player" (click)="$event.stopPropagation()">
+        <video [src]="video.video" autoplay loop muted controls></video>
+      </div>
+    </div>
+  }
+
 </div>

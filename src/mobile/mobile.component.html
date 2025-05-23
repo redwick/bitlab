@@ -139,6 +139,39 @@
   </div>
 
   <div class="section">
+    <div class="text-header">Наши проекты</div>
+    <div class="offer-box" *ngFor="let project of projects; let i = index" (click)="toggleProject(i)">
+      <div class="df">
+        <div class="cxy">
+          <video #video (click)="video.requestFullscreen(); $event.stopPropagation()" class="project-video" [src]="project.video_thumb" autoplay muted loop>
+          </video>
+        </div>
+        <div>
+          <div class="project-header">{{project.title}}</div>
+          <div class="project-subtitle">{{project.subtitle}}</div>
+        </div>
+        <div class="arrow cy">
+          <img src="/down.svg" height="16" [ngStyle]="getProjectImgStyle(i)">
+        </div>
+      </div>
+      <div [ngStyle]="getProjectDescriptionStyle(i)">
+        <div class="project-subtitle">Описание:</div>
+        <ul class="project-descr">
+          @for (s of project.description; track $index) {
+            <li class="project-descr-line subtitle-back">{{s}}</li>
+          }
+        </ul>
+        <div class="project-subtitle">Технологии:</div>
+        <ul class="project-descr">
+          @for (s of project.technologies; track $index) {
+            <li class="project-descr-line subtitle-back">{{s}}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="text-header pb-3vh">Связаться с нами</div>
     <div class="tile-contact df">
       <div class="icons cy">
