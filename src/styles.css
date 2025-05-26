@@ -103,3 +103,6 @@ head,body{
 .cursor-pointer{
   cursor: pointer;
 }
+a,a:visited,a:hover,a:active {
+  color: white;
+}

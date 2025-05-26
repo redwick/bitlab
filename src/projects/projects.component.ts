@@ -254,7 +254,7 @@ export class ProjectsComponent implements OnInit {
 
   flipped: Project[] = [];
   video: Project | undefined;
-  additional = false;
+  additional = -1;
 
   projects = [
     new Project(
@@ -271,23 +271,24 @@ export class ProjectsComponent implements OnInit {
         'Система планирования и учёта времени работы сотрудников',
         ['Angular/TypeScript/HTML/CSS', 'BPMN', 'Scala/Java', 'PostgreSQL/MongoDB', 'Nginx/Docker/Kubernetes'],
         ['Рабочее место сотрудника', 'Ведение задач и проектов', 'Обсуждение вопросов и обмен информацией', 'Планирование и учёт времени работы сотрудников', 'Статистика и аналитика по проектам и сотрудникам']
-      )
+      ),
+      ['ERP', 'CRM']
     ),
     new Project(
       'https://s3.regru.cloud/bitlab/webgpu.mp4',
       'https://s3.regru.cloud/bitlab/webgpu_thumb.mp4',
-      'Web3D Viewer',
-      'Браузерный сервис для визуализации объёмных 3D моделей',
-      ['Angular/TypeScript/HTML/CSS', 'BPMN', 'Scala/Java', 'PostgreSQL/MongoDB', 'Nginx/Docker/Kubernetes'],
-      ['Рабочее место сотрудника', 'Ведение задач и проектов', 'Обсуждение вопросов и обмен информацией', 'Планирование и учёт времени работы сотрудников', 'Статистика и аналитика по проектам и сотрудникам']
+      '3D WebLab',
+      'Вёб-приложение для интерактивной работы с тяжёлыми 3D-моделями',
+      ['Angular/TypeScript/HTML/CSS', 'WebGPU/WebAssembly', 'Rust', 'Nginx/Docker/Kubernetes'],
+      ['Оптимизация объёмных 3D моделей', 'Интерактивный осмотр в реальном времени', 'Интеллектуальное взаимодействие с объектами', 'Высокая производительность в браузере', 'Гибкая интеграция с внешними данными', 'Поддержка навигации и слоёв'],
     ),
     new Project(
-      'https://s3.regru.cloud/bitlab/nautic.mp4',
-      'https://s3.regru.cloud/bitlab/nautic_thumb.mp4',
-      'NauticRus',
-      'Официальный сайт компании NauticRus',
-      ['AngularSSR/TypeScript/HTML/CSS', 'NestJS', 'MongoDB', 'Nginx/Docker'],
-      ['Официальный сайт компании', 'Отправка откликов на вакансии', 'Email рассылка', 'Мобильная версия']
+      'https://s3.regru.cloud/bitlab/spysee.mp4',
+      'https://s3.regru.cloud/bitlab/spysee_thumb.mp4',
+      'SpySee',
+      'Программный продукт для мониторинга и контроля активности сотрудников',
+      ['Electron/Angular/TypeScript/HTML/CSS', '.NET Core C#'],
+      ['Распределённая система отображения видео потоков', 'Высокая производительность и низкий уровень нагрузки', 'Не требует наличия централизованного сервера и высокой пропускной способности', 'Мониторинг активности сотрудников', 'Просмотр экранов сотрудников в реальном времени', 'Учёт времени работы и бездействия сотрудников', 'Создание отчётов по работе сотрудников']
     ),
     new Project(
       'https://s3.regru.cloud/bitlab/fest.mp4',
@@ -298,37 +299,46 @@ export class ProjectsComponent implements OnInit {
       ['Мобильная версия', 'Ведение протоколов соревнований', 'Учёт команд и участников', 'Планирование встреч', 'Расчёт результатов соревнований', 'Бронирование услуг мероприятия', 'Информационное табло результатов для больших экранов']
     ),
     new Project(
-      'https://s3.regru.cloud/bitlab/eurasian.mp4',
-      'https://s3.regru.cloud/bitlab/eurasian_thumb.mp4',
-      'The Eurasian',
-      'Официальный сайт журнала The Eurasian',
-      ['Angular/TypeScript/HTML/CSS', 'Ionic', 'Java/Scala', 'MongoDB', 'Nginx/Docker'],
-      ['Официальный сайт компании', 'Email подписка и рассылка', 'Мобильное приложение для Adnroid и iOS']
-    ),
-    new Project(
-      'https://s3.regru.cloud/bitlab/spysee.mp4',
-      'https://s3.regru.cloud/bitlab/spysee_thumb.mp4',
-      'SpySee',
-      'Программный продукт для мониторинга и контроля активности сотрудников',
-      ['Electron/Angular/TypeScript/HTML/CSS', '.NET Core C#'],
-      ['Мониторинг активности сотрудников', 'Просмотр экранов сотрудников в реальном времени', 'Учёт времени работы и бездействия сотрудников', 'Создание отчётов по работе сотрудников']
+      'https://s3.regru.cloud/bitlab/bend.mp4',
+      'https://s3.regru.cloud/bitlab/bend_thumb.mp4',
+      'PipeBend',
+      'Интерактивный вёб-симулятор гибки труб с поддержкой экспорта управляющего файла для станков',
+      ['AngularSSR/TypeScript/HTML/CSS', 'WebGPU/WebAssembly', 'Rust', 'Nginx/Docker'],
+      ['Импорт 3D-модели трубы из STP файлов', 'Интерактивное представление процесса гибки поэтапно', 'Подробное отображение характеристик каждого сегмента трубы', 'Симуляция процесса гибки', 'Экспорт управляющего файла для станка', 'Высокая производительность в браузере']
     ),
     new Project(
       'https://s3.regru.cloud/bitlab/charts.mp4',
       'https://s3.regru.cloud/bitlab/charts_thumb.mp4',
-      'MinCharts',
-      'Демо проект цифровизации расчёта судовых заказов минпромторга',
+      'ЦНИИТС MinLab',
+      'Визуализация расчётов <a href=\"https://tsniis.com/\" target=\"_blank\">ЦНИИТС</a> приказа <a href=\"http://publication.pravo.gov.ru/document/0001202304040039\" target=\"_blank\">минпромторга Д.В.Мантурова</a> ',
       ['Angular/TypeScript/HTML/CSS', 'Nginx'],
-      []
+      ['Интерактивное представление нормативов трудоёмкости строительства судов', 'Агрегация и анализ объёмных данных', 'Визуализация расчётов', 'Анализ временных рядов', 'Представление данных на экране', 'Работа с большим объёмом данных']
     ),
     new Project(
-      'https://s3.regru.cloud/bitlab/eurasian24.mp4',
-      'https://s3.regru.cloud/bitlab/eurasian24_thumb.mp4',
-      'Eurasian24',
-      'Официальный сайт СМИ «Евразия 24»',
-      ['Angular/TypeScript/HTML/CSS', 'Ionic', 'Java/Scala', 'MongoDB', 'Nginx/Docker/AWS S3'],
-      ['Официальный сайт компании', 'Email подписка и рассылка', 'Мобильное приложение для Adnroid и iOS', 'Кастомный видео плеер', 'Потоковая трансляция видео']
-    )
+      'https://s3.regru.cloud/bitlab/nautic.mp4',
+      'https://s3.regru.cloud/bitlab/nautic_thumb.mp4',
+      'NauticRus',
+      'Официальный сайт компании NauticRus',
+      ['AngularSSR/TypeScript/HTML/CSS', 'NestJS', 'MongoDB', 'Nginx/Docker'],
+      ['Официальный сайт компании', 'Отправка откликов на вакансии', 'Email рассылка', 'Мобильная версия']
+    ),
+    new Project(
+      'https://s3.regru.cloud/bitlab/eurasian.mp4',
+      'https://s3.regru.cloud/bitlab/eurasian_thumb.mp4',
+      'The Eurasian',
+      'Официальный сайт журнала «The Eurasian»',
+      ['Angular/TypeScript/HTML/CSS', 'Ionic', 'Java/Scala', 'MongoDB', 'Nginx/Docker'],
+      ['Официальный сайт компании', 'Email подписка и рассылка', 'Мобильное приложение для Adnroid и iOS'],
+      new Project(
+        'https://s3.regru.cloud/bitlab/eurasian24.mp4',
+        'https://s3.regru.cloud/bitlab/eurasian24_thumb.mp4',
+        'Eurasian 24',
+        'Официальный сайт СМИ «Eurasian 24»',
+        ['Angular/TypeScript/HTML/CSS', 'Ionic', 'Java/Scala', 'MongoDB', 'Nginx/Docker/AWS S3'],
+        ['Официальный сайт компании', 'Email подписка и рассылка', 'Мобильное приложение для Adnroid и iOS', 'Кастомный видео плеер', 'Потоковая трансляция видео']
+      ),
+      ['TE', 'TE24']
+    ),
   ];
 
   init = false;

@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" xmlns="http://www.w3.org/1999/html">
   <div class="section-mask" [@background]="init ? 'init' : 'closed'"></div>
   <div class="text-header">Наши проекты</div>
   <div class="projects-header">
@@ -10,11 +10,11 @@
         <div class="side front">
           @if (project.additional){
             <div class="df additional">
-              <div (click)="additional = false; $event.stopPropagation()" class="tab" [class.active]="!additional">ERP</div>
-              <div (click)="additional = true; $event.stopPropagation()" class="tab" [class.active]="additional">CRM</div>
+              <div (click)="additional = -1; $event.stopPropagation()" class="tab" [class.active]="additional != i">{{project.additional_menu[0]}}</div>
+              <div (click)="additional = i; $event.stopPropagation()" class="tab" [class.active]="additional == i">{{project.additional_menu[1]}}</div>
             </div>
           }
-          @if (additional && project.additional){
+          @if (additional != -1 && project.additional && i == additional){
             <div class="project-header-and-image">
               <div class="cxy">
                 <video (click)="openVideo(project.additional!); $event.stopPropagation()" class="project-image-img" [src]="project.additional.video_thumb" autoplay loop muted></video>
@@ -35,7 +35,7 @@
                 <video (click)="openVideo(project); $event.stopPropagation()" class="project-image-img" [src]="project.video_thumb" autoplay loop muted></video>
               </div>
               <div class="project-header cx">{{project.title}}</div>
-              <div class="project-subtitle cx">{{project.subtitle}}</div>
+              <div class="project-subtitle cx" (click)="$event.stopPropagation()"><span [innerHTML]="project.subtitle"></span></div>
             </div>
             <div class="rotate">
               <div class="button-rotate">
