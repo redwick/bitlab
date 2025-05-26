@@ -148,7 +148,7 @@
         </div>
         <div>
           <div class="project-header">{{project.title}}</div>
-          <div class="project-subtitle">{{project.subtitle}}</div>
+          <div class="project-subtitle"><span [innerHTML]="project.subtitle"></span></div>
         </div>
         <div class="arrow cy">
           <img src="/down.svg" height="16" [ngStyle]="getProjectImgStyle(i)">
